@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class LedgeGrabbing : MonoBehaviour
 {
-    //https://www.youtube.com/watch?v=72b4P3AztH4&t=425s
     [Header("References")]
     private PlayerMovement pm;
     private StarterAssetsInputs it;
@@ -127,7 +126,7 @@ public class LedgeGrabbing : MonoBehaviour
         if(distanceToLedge > 1f)
         {
             if(rb.linearVelocity.magnitude < moveToLedgeSpeed)
-                rb.AddForce(directionToLedge.normalized * moveToLedgeSpeed * 1000f * Time.deltaTime);
+                rb.AddForce(1000f * moveToLedgeSpeed * Time.deltaTime * directionToLedge.normalized);
         }
         else
         {

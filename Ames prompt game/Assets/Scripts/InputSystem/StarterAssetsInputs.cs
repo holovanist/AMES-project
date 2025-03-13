@@ -18,6 +18,7 @@ namespace StarterAssets
         public bool interact;
 		public bool Climb;
 		public bool Slide;
+		public bool Dash;
 
 		[Header("Movement Settings")]
 		public bool analogMovement;
@@ -45,7 +46,12 @@ namespace StarterAssets
             JumpInput(value.isPressed);
 		}
 
-		public void OnSprint(InputValue value)
+        public void OnDash(InputValue value)
+        {
+            DashInput(value.isPressed);
+        }
+
+        public void OnSprint(InputValue value)
 		{
 			SprintInput(value.isPressed);
 		}
@@ -77,6 +83,10 @@ namespace StarterAssets
             SlideInput(value.isPressed);
         }
 #endif
+        public void DashInput(bool newDashState)
+        {
+            Dash = newDashState;
+        }
         public void CrouchInput(bool newcrouchState)
         {
             crouch = newcrouchState;

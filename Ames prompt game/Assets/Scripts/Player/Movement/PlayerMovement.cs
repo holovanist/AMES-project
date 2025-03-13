@@ -6,7 +6,6 @@ using UnityEngine;
 
 namespace NewMovment
 {
-    //https://www.youtube.com/watch?v=WfW0k5qENxM&t=322
     public class PlayerMovement : MonoBehaviour
     {
         [Header("Movement")]
@@ -16,9 +15,15 @@ namespace NewMovment
         public float wallRunSpeed;
         public float slideSpeed;
         public float climbSpeed;
+        public float dashSpeed;
+
+        public float maxYSpeed;
+
+        public float dashSpeedIncreaseMultiplier;
         [Tooltip("The difference in speed of the last way of moving and the current")]
         public float MaxSpeedDifference = 4f;
 
+        private float originalSpeedIncreaseMultiplier;
         public float speedIncreaseMultiplier;
         public float slopeIncreaseMultiplier;
 
@@ -76,10 +81,13 @@ namespace NewMovment
             climbing,
             crouching,
             sliding,
+            dashing,
             air
         }
         [HideInInspector]
         public bool sliding;
+        [HideInInspector]
+        public bool dashing;
         [HideInInspector]
         public bool crouching;
         [HideInInspector]
@@ -93,6 +101,7 @@ namespace NewMovment
 
         void Start()
         {
+            originalSpeedIncreaseMultiplier = speedIncreaseMultiplier;
             //cs = GetComponent<Climbing>();
             it = GetComponent<StarterAssetsInputs>();
             rb = GetComponent<Rigidbody>();
@@ -107,7 +116,7 @@ namespace NewMovment
             MyInput();
             SpeedControl();
             StateHandler();
-            if (grounded)
+            if (state == MovementState.crouching || state == MovementState.walking || state == MovementState.sprinting)
                 rb.linearDamping = GroundDrag;
             else
                 rb.linearDamping = 0f;
@@ -149,10 +158,17 @@ namespace NewMovment
             }
         }
 
-        bool keepMomentum;
+        private MovementState lastState;
+        private bool keepMomentum;
         private void StateHandler()
         {
-            if(freeze)
+            if(dashing)
+            {
+                state = MovementState.dashing;
+                desiredMoveSpeed = dashSpeed;
+                speedIncreaseMultiplier = dashSpeedIncreaseMultiplier;
+            }
+            else if(freeze)
             {
                 state = MovementState.freeze;
                 rb.linearVelocity = Vector3.zero;
@@ -202,9 +218,14 @@ namespace NewMovment
             {
                 keepMomentum = true;
                 state = MovementState.air;
+
+                if (desiredMoveSpeed < sprintSpeed)
+                    desiredMoveSpeed = walkSpeed;
+                else desiredMoveSpeed = sprintSpeed;
             }
 
             bool desiredMoveSpeedHasChanged = desiredMoveSpeed != lastDesiredMoveSpeed;
+            if (lastState == MovementState.dashing) keepMomentum = true;
 
             if (desiredMoveSpeedHasChanged)
             {
@@ -215,11 +236,13 @@ namespace NewMovment
                 }
                 else
                 {
+                    StopAllCoroutines();
                     moveSpeed = desiredMoveSpeed;
                 }
             }
 
             lastDesiredMoveSpeed = desiredMoveSpeed;
+            lastState = state;
 
             if (Mathf.Abs(desiredMoveSpeed - moveSpeed) < 0.1f) keepMomentum = false;
         }
@@ -246,7 +269,7 @@ namespace NewMovment
                 //time += Time.deltaTime;
                 yield return null;
             }
-
+            speedIncreaseMultiplier = originalSpeedIncreaseMultiplier;
             moveSpeed = desiredMoveSpeed;
         }
 
@@ -254,6 +277,7 @@ namespace NewMovment
 
         private void MovePlayer()
         {
+            if(state == MovementState.dashing) return;
             if(restricted) return;
 
             //if (cs.exitingWall) return;
@@ -262,16 +286,16 @@ namespace NewMovment
 
             if(OnSlope() && !ExitingSlope)
             {
-                rb.AddForce(GetSlopeMoveDirection(moveDir) * moveSpeed * 20f, ForceMode.Force);
+                rb.AddForce(20f * moveSpeed * GetSlopeMoveDirection(moveDir), ForceMode.Force);
 
                 if (rb.linearVelocity.y > 0)
                     rb.AddForce(Vector3.down * 80f, ForceMode.Force);
             }
 
             else if (grounded)
-                rb.AddForce(moveDir.normalized * moveSpeed * 10f, ForceMode.Force);
+                rb.AddForce(10f * moveSpeed * moveDir.normalized, ForceMode.Force);
             else if(!grounded)
-                rb.AddForce(moveDir.normalized * moveSpeed * 10f * airMultiplier, ForceMode.Force);
+                rb.AddForce(10f * airMultiplier * moveSpeed * moveDir.normalized, ForceMode.Force);
 
             if(!wallrunning)
             rb.useGravity = !OnSlope();
@@ -285,7 +309,7 @@ namespace NewMovment
             }
             else
             {
-                Vector3 flatVel = new Vector3(rb.linearVelocity.x, 0f, rb.linearVelocity.z);
+                Vector3 flatVel = new(rb.linearVelocity.x, 0f, rb.linearVelocity.z);
                 if(flatVel.magnitude > moveSpeed)
                 {
                         Vector3 limetedVel = flatVel.normalized * moveSpeed;
@@ -294,6 +318,8 @@ namespace NewMovment
 
             }
 
+            if(maxYSpeed != 0 && rb.linearVelocity.y > maxYSpeed)
+                rb.linearVelocity = new Vector3(rb.linearVelocity.x, maxYSpeed, rb.linearVelocity.z);
         }
         private void Jump()
         {

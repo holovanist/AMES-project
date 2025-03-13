@@ -11,7 +11,6 @@ using Random = UnityEngine.Random;
 
 namespace player
 {
-    //https://www.youtube.com/watch?v=wZ2UUOC17AY
 #if ENABLE_INPUT_SYSTEM
     [RequireComponent(typeof(PlayerInput))]
 #endif
@@ -36,7 +35,7 @@ namespace player
         public float TimeBetweenAbilities;
         public float saveCoolDown;
         public int Ability1Bullets;
-        bool Ability1Active, ReadyToActivate; 
+        bool /*Ability1Active,*/ ReadyToActivate; 
         public bool SaveCoolDownActive {  get; set; }
 
         [Header("Referance Objects")]
@@ -98,11 +97,11 @@ namespace player
                 Shoot();
             }
             //Ability1Active = _input.Ability1;
-            if (ReadyToActivate && Ability1Active && !Reloading && BulletsLeft > Ability1Bullets)
+            /*if (ReadyToActivate && Ability1Active && !Reloading && BulletsLeft > Ability1Bullets)
             {
                 BulletsShot = 0;
                 Ability1();
-            }
+            }*/
         }
         private void Shoot()
         {
