@@ -69,33 +69,6 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Reload",
-                    "type": "PassThrough",
-                    "id": "949a1b10-d012-400b-a114-8f0b2b8181a9",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "Ability 1",
-                    "type": "PassThrough",
-                    "id": "d642b735-fd0a-498a-953e-e6507fa49da6",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "Ability 2",
-                    "type": "PassThrough",
-                    "id": "7165c292-f615-41db-adcc-b2e2be7b35b0",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
                     "name": "Crouch",
                     "type": "PassThrough",
                     "id": "96b4475a-29b1-441d-b885-a7a9addafaac",
@@ -354,39 +327,6 @@
                     "processors": "",
                     "groups": "",
                     "action": "Climb",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "b18a8826-8245-4a62-9572-67994eef03ea",
-                    "path": "<Keyboard>/r",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": ";KeyboardMouse",
-                    "action": "Reload",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "fa82ab2a-82f7-4410-ad45-1aeba683ace6",
-                    "path": "<Keyboard>/1",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": ";KeyboardMouse",
-                    "action": "Ability 1",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "2e509242-ddd4-47f0-abd4-0230ee44d871",
-                    "path": "<Keyboard>/2",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": ";KeyboardMouse",
-                    "action": "Ability 2",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },

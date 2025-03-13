@@ -31,7 +31,8 @@ namespace NewMovment
         private bool wallRight;
 
         [Header("Exiting")]
-        private bool exitingWall;
+        [HideInInspector]
+        public bool exitingWall;
         public float exitWallTime;
         private float exitWallTimer;
 
@@ -43,13 +44,17 @@ namespace NewMovment
         public Transform orientation;
         private PlayerMovement pm;
         private Rigidbody rb;
+        private Climbing cl;
         private StarterAssetsInputs it;
+        private LedgeGrabbing lg;
 
         void Start()
         {
+            lg = GetComponent<LedgeGrabbing>();
             it = GetComponent<StarterAssetsInputs>();
             rb = GetComponent<Rigidbody>();
             pm = GetComponent<PlayerMovement>();
+            cl = GetComponent<Climbing>();
         }
 
         void Update()
@@ -154,6 +159,9 @@ namespace NewMovment
 
         private void WallJump()
         {
+            if(cl.exitingWall) return;
+            if(lg.holding || lg.exitingLedge) return;
+
             exitingWall = true;
             exitWallTimer = exitWallTime;
 

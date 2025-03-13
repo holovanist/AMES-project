@@ -97,7 +97,7 @@ namespace player
                 BulletsShot = 0;
                 Shoot();
             }
-            Ability1Active = _input.Ability1;
+            //Ability1Active = _input.Ability1;
             if (ReadyToActivate && Ability1Active && !Reloading && BulletsLeft > Ability1Bullets)
             {
                 BulletsShot = 0;

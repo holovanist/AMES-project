@@ -21,6 +21,10 @@ public class LedgeGrabbing : MonoBehaviour
 
     public bool holding;
 
+    [Header("Ledge Jumping")]
+    public float ledgeJumpForwardForce;
+    public float ledgeJumpUpwardForce;
+
     [Header("Ledge Detection")]
     public float ledgeDetectionLength;
     public float ledgeSphereCastRadius;
@@ -30,6 +34,11 @@ public class LedgeGrabbing : MonoBehaviour
     private Transform currLedge;
 
     private RaycastHit ledgeHit;
+
+    [Header("Exiting")]
+    public bool exitingLedge;
+    public float exitLedgeTime;
+    private float exitLedgeTimer;
 
     void Start()
     {
@@ -57,8 +66,14 @@ public class LedgeGrabbing : MonoBehaviour
             timeOnLedge += Time.deltaTime;
 
             if(timeOnLedge > minTimeOnLedge && anyInputKeyPressed) ExitLedgeHold();
-        }
 
+            if (it.jump) LedgeJump();
+        }
+        else if (exitingLedge)
+        {
+            if(exitLedgeTimer > 0) exitLedgeTimer -= Time.deltaTime;
+            else exitingLedge = false;
+        }
 
     }    
 
@@ -75,11 +90,24 @@ public class LedgeGrabbing : MonoBehaviour
         if (distanceToLedge < maxLedgeGrabDistance && !holding) EnterLedgeHold();
     }
 
+    private void LedgeJump()
+    {
+        ExitLedgeHold();
+
+        Invoke(nameof(DelayedJumpForce), 0.05f );
+    }
+
+    private void DelayedJumpForce()
+    {
+        Vector3 forceToAdd = cam.forward * ledgeJumpForwardForce + Orientation.up * ledgeJumpUpwardForce;
+        rb.linearVelocity = Vector3.zero;
+        rb.AddForce(forceToAdd, ForceMode.Impulse);
+    }
+
     private void EnterLedgeHold()
     {
         holding = true;
 
-        pm.unlimited = true;
         pm.restricted = true;
 
         currLedge = ledgeHit.transform;
@@ -104,7 +132,6 @@ public class LedgeGrabbing : MonoBehaviour
         else
         {
             if (!pm.freeze) pm.freeze = true;
-            if(pm.unlimited) pm.unlimited = false;
         }
 
         if(distanceToLedge > maxLedgeGrabDistance) ExitLedgeHold();
@@ -112,6 +139,10 @@ public class LedgeGrabbing : MonoBehaviour
 
     private void ExitLedgeHold()
     {
+        exitingLedge = true;
+        exitLedgeTimer = exitLedgeTime;
+
+
         holding = false;
         timeOnLedge = 0f;
 

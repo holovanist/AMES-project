@@ -70,7 +70,6 @@ namespace NewMovment
         public enum MovementState
         {
             freeze,
-            unlimited,
             walking,
             sprinting,
             wallrunning,
@@ -89,8 +88,6 @@ namespace NewMovment
         public bool climbing;
         [HideInInspector]
         public bool freeze;
-        [HideInInspector]
-        public bool unlimited;
         [HideInInspector]
         public bool restricted;
 
@@ -151,21 +148,19 @@ namespace NewMovment
                 transform.localScale = new Vector3(transform.localScale.x, startYScale, transform.localScale.z);
             }
         }
+
+        bool keepMomentum;
         private void StateHandler()
         {
             if(freeze)
             {
                 state = MovementState.freeze;
                 rb.linearVelocity = Vector3.zero;
-            }
-            else if (unlimited)
-            {
-                state = MovementState.unlimited;
-                moveSpeed = 999f;
-                return;
+                desiredMoveSpeed = 0;
             }
             else if(climbing)
             {
+                keepMomentum = true;
                 state = MovementState.climbing;
                 desiredMoveSpeed = climbSpeed;
             }
@@ -173,14 +168,18 @@ namespace NewMovment
             {
                 state = MovementState.sliding;
 
-                if(OnSlope() && rb.linearVelocity.y < 0.1f)
+                if (OnSlope() && rb.linearVelocity.y < 0.1f)
+                {
                     desiredMoveSpeed = slideSpeed;
-                else 
+                    keepMomentum = true;
+                }
+                else
                     desiredMoveSpeed = sprintSpeed;
             }
             else if (wallrunning)
             {
                 state = MovementState.wallrunning;
+                keepMomentum = true;
                 desiredMoveSpeed = wallRunSpeed;
             }
             else if (it.crouch)
@@ -191,6 +190,7 @@ namespace NewMovment
             else if (grounded && it.sprint)
             {
                 state = MovementState.sprinting;
+                keepMomentum = true;
                 desiredMoveSpeed = sprintSpeed;
             }
             else if(grounded)
@@ -200,20 +200,28 @@ namespace NewMovment
             }
             else
             {
+                keepMomentum = true;
                 state = MovementState.air;
             }
 
-            if(Mathf.Abs(desiredMoveSpeed - lastDesiredMoveSpeed) > MaxSpeedDifference && moveSpeed!= 0)
+            bool desiredMoveSpeedHasChanged = desiredMoveSpeed != lastDesiredMoveSpeed;
+
+            if (desiredMoveSpeedHasChanged)
             {
-                StopAllCoroutines();
-                StartCoroutine(SmoothlyLerpMoveSpeed());
-            }
-            else
-            {
-                moveSpeed = desiredMoveSpeed;
+                if (keepMomentum)
+                {
+                    StopAllCoroutines();
+                    StartCoroutine(SmoothlyLerpMoveSpeed());
+                }
+                else
+                {
+                    moveSpeed = desiredMoveSpeed;
+                }
             }
 
             lastDesiredMoveSpeed = desiredMoveSpeed;
+
+            if (Mathf.Abs(desiredMoveSpeed - moveSpeed) < 0.1f) keepMomentum = false;
         }
 
         private IEnumerator SmoothlyLerpMoveSpeed()

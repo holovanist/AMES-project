@@ -18,8 +18,6 @@ namespace StarterAssets
         public bool interact;
 		public bool Climb;
 		public bool Slide;
-		public bool Ability1;
-		public bool Ability2;
 
 		[Header("Movement Settings")]
 		public bool analogMovement;
@@ -70,14 +68,6 @@ namespace StarterAssets
         {
             ClimbInput(value.isPressed);
         }
-        public void OnAbility1(InputValue value)
-        {
-            Ability1Input(value.isPressed);
-        }
-        public void OnAbility2(InputValue value)
-        {
-            Ability2Input(value.isPressed);
-        }
         public void OnCrouch(InputValue value)
         {
             CrouchInput(value.isPressed);
@@ -87,10 +77,6 @@ namespace StarterAssets
             SlideInput(value.isPressed);
         }
 #endif
-        public void Ability1Input(bool newAbility1State)
-        {
-            Ability1 = newAbility1State;
-        }
         public void CrouchInput(bool newcrouchState)
         {
             crouch = newcrouchState;
@@ -98,10 +84,6 @@ namespace StarterAssets
         public void SlideInput(bool newSlideState)
         {
             Slide = newSlideState;
-        }
-        public void Ability2Input(bool newAbility2State)
-        {
-            Ability2 = newAbility2State;
         }
         public void ClimbInput(bool newClimbState)
         {
