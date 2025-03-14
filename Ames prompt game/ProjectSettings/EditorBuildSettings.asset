@@ -11,6 +11,15 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Start Menu.unity
     guid: 5b346b0ba9ea8d5438949361e8592bb7
+  - enabled: 1
+    path: Assets/Scenes/HowToPlay.unity
+    guid: 20d0221fa30eb4f4a81f8c1848e0f0af
+  - enabled: 1
+    path: Assets/Scenes/Controls.unity
+    guid: d4fd9480b852bb64fa3155a2212277f3
+  - enabled: 1
+    path: Assets/Scenes/WinScreen.unity
+    guid: 3a366598ce0059e48a129c3084f682fe
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0
