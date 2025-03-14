@@ -19,6 +19,7 @@ namespace StarterAssets
 		public bool Climb;
 		public bool Slide;
 		public bool Dash;
+		public bool Grapple;
 
 		[Header("Movement Settings")]
 		public bool analogMovement;
@@ -41,7 +42,12 @@ namespace StarterAssets
 			}
 		}
 
-		public void OnJump(InputValue value)
+        public void OnGrapple(InputValue value)
+        {
+            GrappleInput(value.isPressed);
+        }
+
+        public void OnJump(InputValue value)
 		{
             JumpInput(value.isPressed);
 		}
@@ -83,6 +89,10 @@ namespace StarterAssets
             SlideInput(value.isPressed);
         }
 #endif
+        public void GrappleInput(bool newGrappleState)
+        {
+            Grapple = newGrappleState;
+        }
         public void DashInput(bool newDashState)
         {
             Dash = newDashState;

@@ -87,6 +87,8 @@ namespace NewMovment
         [HideInInspector]
         public bool sliding;
         [HideInInspector]
+        public bool activeGrapple;
+        [HideInInspector]
         public bool dashing;
         [HideInInspector]
         public bool crouching;
@@ -109,6 +111,7 @@ namespace NewMovment
             readyToJump = true;
             startYScale = transform.localScale.y;
             crouching = false;
+            state = MovementState.walking;
         }
         private void Update()
         {
@@ -116,7 +119,7 @@ namespace NewMovment
             MyInput();
             SpeedControl();
             StateHandler();
-            if (state == MovementState.crouching || state == MovementState.walking || state == MovementState.sprinting)
+            if (grounded && !activeGrapple || !dashing && grounded)
                 rb.linearDamping = GroundDrag;
             else
                 rb.linearDamping = 0f;
@@ -171,8 +174,8 @@ namespace NewMovment
             else if(freeze)
             {
                 state = MovementState.freeze;
-                rb.linearVelocity = Vector3.zero;
                 desiredMoveSpeed = 0;
+                rb.linearVelocity = Vector3.zero;
             }
             else if(climbing)
             {
@@ -226,6 +229,7 @@ namespace NewMovment
 
             bool desiredMoveSpeedHasChanged = desiredMoveSpeed != lastDesiredMoveSpeed;
             if (lastState == MovementState.dashing) keepMomentum = true;
+            if (lastState == MovementState.walking && state == MovementState.sprinting) keepMomentum = false;
 
             if (desiredMoveSpeedHasChanged)
             {
@@ -279,6 +283,7 @@ namespace NewMovment
         {
             if(state == MovementState.dashing) return;
             if(restricted) return;
+            if(activeGrapple) return;
 
             //if (cs.exitingWall) return;
 
@@ -302,6 +307,8 @@ namespace NewMovment
         }
         private void SpeedControl()
         {
+            if(activeGrapple) return;
+
             if (OnSlope() && !ExitingSlope)
             {
                 if(rb.linearVelocity.magnitude > moveSpeed)
@@ -336,6 +343,41 @@ namespace NewMovment
             ExitingSlope = false;
         }
 
+        private bool enableMovementOnNextTouch;
+        public void JumpToPosition(Vector3 targetPosition, float trajectoryHeight)
+        {
+            activeGrapple = true;
+
+            velocityToSet = CalculateJumpVelocity(transform.position, targetPosition, trajectoryHeight);
+            Invoke(nameof(SetVelocity), 0.1f);
+
+            Invoke(nameof(ResetRestrictions), 10f);
+        }
+
+        private Vector3 velocityToSet;
+
+        private void SetVelocity()
+        {
+            enableMovementOnNextTouch = true;
+            rb.linearVelocity = velocityToSet;
+        }
+
+        public void ResetRestrictions()
+        {
+            activeGrapple = false;
+        }
+
+        private void OnCollisionEnter(Collision collision)
+        {
+            if(enableMovementOnNextTouch)
+            {
+                enableMovementOnNextTouch = false;
+                ResetRestrictions();
+
+                GetComponent<Grappling>().StopGrapple();
+            }
+        }
+
         public bool OnSlope()
         {
             if(Physics.Raycast(transform.position, Vector3.down, out slopeHit, playerHeight * 0.5f + 0.3f))
@@ -352,7 +394,18 @@ namespace NewMovment
             return Vector3.ProjectOnPlane(Dir, slopeHit.normal).normalized;
         }
 
+        public Vector3 CalculateJumpVelocity(Vector3 startPoint, Vector3 endPoint, float trajectoryHeight)
+        {
+            float gravity = Physics.gravity.y;
+            float displacmentY = endPoint.y - startPoint.y;
+            Vector3 DisplacmentXZ = new Vector3(endPoint.x - startPoint.x, 0f , endPoint.z - startPoint.z);
 
+            Vector3 velocityY = Vector3.up * Mathf.Sqrt(-2 * gravity * trajectoryHeight);
+            Vector3 velocityXZ = DisplacmentXZ / (Mathf.Sqrt(-2 * gravity / trajectoryHeight) + Mathf.Sqrt(2 * (displacmentY - trajectoryHeight) / gravity));
+            
+            return velocityXZ + velocityY;
+
+        }
 
 
 
