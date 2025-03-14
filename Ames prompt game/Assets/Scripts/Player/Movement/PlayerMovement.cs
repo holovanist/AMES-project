@@ -219,7 +219,6 @@ namespace NewMovment
             }
             else
             {
-                keepMomentum = true;
                 state = MovementState.air;
 
                 if (desiredMoveSpeed < sprintSpeed)
@@ -374,7 +373,7 @@ namespace NewMovment
                 enableMovementOnNextTouch = false;
                 ResetRestrictions();
 
-                GetComponent<Grappling>().StopGrapple();
+                //GetComponent<Grappling>().StopGrapple();
             }
         }
 
@@ -397,11 +396,11 @@ namespace NewMovment
         public Vector3 CalculateJumpVelocity(Vector3 startPoint, Vector3 endPoint, float trajectoryHeight)
         {
             float gravity = Physics.gravity.y;
-            float displacmentY = endPoint.y - startPoint.y;
-            Vector3 DisplacmentXZ = new Vector3(endPoint.x - startPoint.x, 0f , endPoint.z - startPoint.z);
+            float displacementY = endPoint.y - startPoint.y;
+            Vector3 displacementXZ = new Vector3(endPoint.x - startPoint.x, 0f, endPoint.z - startPoint.z);
 
             Vector3 velocityY = Vector3.up * Mathf.Sqrt(-2 * gravity * trajectoryHeight);
-            Vector3 velocityXZ = DisplacmentXZ / (Mathf.Sqrt(-2 * gravity / trajectoryHeight) + Mathf.Sqrt(2 * (displacmentY - trajectoryHeight) / gravity));
+            Vector3 velocityXZ = displacementXZ / (Mathf.Sqrt(-2 *  trajectoryHeight / gravity) + Mathf.Sqrt(2 * (displacementY - trajectoryHeight) / gravity));
             
             return velocityXZ + velocityY;
 
