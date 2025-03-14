@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Dashing : MonoBehaviour
 {
-    //https://youtu.be/QRYGrCWumFw?si=1OcDeVaxRd1DaWLe&t=592
     [Header("References")]
     public Transform orientation;
     public Transform playerCam;
@@ -104,4 +103,5 @@ public class Dashing : MonoBehaviour
 
         return dir.normalized;
     }
+
 }

@@ -86,13 +86,14 @@ public class Climbing : MonoBehaviour
 
             if(exitWallTimer > 0) exitWallTimer -= Time.deltaTime;
             if (exitWallTimer < 0) exitingWall = false;
+            if (exitWallTimer < 0) pm.restricted = false;
         }
 
         else
         {
             if (climbing) StopClimbing();
         }
-        if(wallFront && it.jump && climbJumpsLeft > 0) ClimbJump();
+        if(wallFront && it.jump && climbJumpsLeft > 0 && climbing) ClimbJump();
     }
     private void WallCheck()
     {
@@ -133,6 +134,7 @@ public class Climbing : MonoBehaviour
         if(wr.exitingWall) return;
 
         exitingWall = true;
+        pm.restricted = true;
         exitWallTimer = exitWallTime;
 
         Vector3 forceToApply = transform.up * climbJumpUpForce + frontWallHit.normal * climbJumpBackForce;
