@@ -20,6 +20,9 @@ namespace StarterAssets
 		public bool Slide;
 		public bool Dash;
 		public bool Grapple;
+		public bool SwitchMaskUp;
+		public bool SwitchMaskDown;
+        public bool Grab;
 
 		[Header("Movement Settings")]
 		public bool analogMovement;
@@ -88,7 +91,31 @@ namespace StarterAssets
         {
             SlideInput(value.isPressed);
         }
+        public void OnSwitchMaskUp(InputValue value)
+        {
+            SwitchMaskUpInput(value.isPressed);
+        }
+        public void OnSwitchMaskDown(InputValue value)
+        {
+            SwitchMaskDownInput(value.isPressed);
+        }
+        public void OnGrab(InputValue value)
+        {
+            SwitchMaskDownInput(value.isPressed);
+        }
 #endif
+        public void GrabInput(bool newGrabState)
+        {
+            Grab = newGrabState;
+        }
+        public void SwitchMaskUpInput(bool newSwitchMaskUpState)
+        {
+            SwitchMaskUp = newSwitchMaskUpState;
+        }
+        public void SwitchMaskDownInput(bool newSwitchMaskDownState)
+        {
+            SwitchMaskDown = newSwitchMaskDownState;
+        }
         public void GrappleInput(bool newGrappleState)
         {
             Grapple = newGrappleState;

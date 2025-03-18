@@ -26,8 +26,8 @@ namespace NewMovment
         }
         private void Update()
         {
-            float mouseX = -_input.look.x * Time.deltaTime * sensX;
-            float mouseY = _input.look.y * Time.deltaTime * sensY;
+            float mouseX = -_input.look.x  * sensX;
+            float mouseY = _input.look.y  * sensY;
 
             yRotation += mouseX;
 
