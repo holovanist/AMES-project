@@ -8,6 +8,8 @@ public class MainMenu : MonoBehaviour
     [SerializeField]
     string levelToLoad = "Level 1";
     public string MainMenu1 = "Start Menu";
+    public string HowToPlay1 = "HowToPlay";
+    public string Controls1 = "Controls";
     public void StartGame()
     {
         SceneManager.LoadScene(levelToLoad);
@@ -21,4 +23,13 @@ public class MainMenu : MonoBehaviour
     {
         SceneManager.LoadScene(MainMenu1);
     }
+    public void HowToPlay()
+    {
+        SceneManager.LoadScene(HowToPlay1);
+    }
+    public void Controls()
+    {
+        SceneManager.LoadScene(Controls1);
+    }
+    
 }
