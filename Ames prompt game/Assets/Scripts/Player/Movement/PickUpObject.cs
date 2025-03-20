@@ -3,8 +3,10 @@ using UnityEngine;
 
 public class PickUpObject : MonoBehaviour
 {
+    //https://www.youtube.com/watch?v=6bFCQqabfzo
     [Header("Pickup Settings")]
     public Transform holdArea;
+    [SerializeField]
     private GameObject heldObj;
     private Rigidbody heldObjRB;
     private StarterAssetsInputs it;
@@ -16,6 +18,9 @@ public class PickUpObject : MonoBehaviour
     public float pickupDrag = 10.0f;
     public float dragAfterDrop = 1.0f;
     public bool freezeRotation;
+    [SerializeField]
+    bool inputDown;
+    bool down;
 
     private void Start()
     {
@@ -23,12 +28,15 @@ public class PickUpObject : MonoBehaviour
     }
     private void Update()
     {
-        if(it.Grab)
+        if(it.Grab) inputDown = true;
+        else inputDown = false;
+        if(inputDown) down = true;
+        if (inputDown && down)
         {
             if(heldObj == null)
             {
                 RaycastHit hit;
-                if(Physics.Raycast(cam.position, cam.TransformDirection(Vector3.forward), out hit, pickupRange))
+                if(Physics.Raycast(cam.position, cam.forward, out hit, pickupRange))
                 {
                     PickupObject(hit.transform.gameObject);
                 }
@@ -67,8 +75,9 @@ public class PickUpObject : MonoBehaviour
     }
     void DropObject()
     {
-            heldObjRB.useGravity = false;
-            heldObjRB.linearDamping = pickupDrag;
+        down = true;
+        heldObjRB.useGravity = true;
+            heldObjRB.linearDamping = dragAfterDrop;
             if (freezeRotation) heldObjRB.constraints = RigidbodyConstraints.None;
 
             heldObjRB.transform.parent = null;

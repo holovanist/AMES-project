@@ -101,7 +101,7 @@ namespace StarterAssets
         }
         public void OnGrab(InputValue value)
         {
-            SwitchMaskDownInput(value.isPressed);
+            GrabInput(value.isPressed);
         }
 #endif
         public void GrabInput(bool newGrabState)
