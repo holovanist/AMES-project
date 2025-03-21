@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class pickUp : MonoBehaviour
 {
-    //
+    //https://www.youtube.com/watch?v=fApXEL0xsx4
     bool isHolding = false;
     int click;
     float timer;
