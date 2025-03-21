@@ -7,12 +7,20 @@ public class MainMenu : MonoBehaviour
 {
     [SerializeField]
     string levelToLoad = "Level 1";
+    string levelToLoad2 = "Level 1 Hard";
+    public string Select = "DifficultySelect";
     public string MainMenu1 = "Start Menu";
     public string HowToPlay1 = "HowToPlay";
     public string Controls1 = "Controls";
-    public void StartGame()
+    
+    public void StartEasyGame()
     {
         SceneManager.LoadScene(levelToLoad);
+        Time.timeScale = 1.0f;
+    }
+    public void StartHardGame()
+    {
+        SceneManager.LoadScene(levelToLoad2);
         Time.timeScale = 1.0f;
     }
     public void QuitGame()
@@ -30,6 +38,10 @@ public class MainMenu : MonoBehaviour
     public void Controls()
     {
         SceneManager.LoadScene(Controls1);
+    }
+    public void DifficultySelect()
+    {
+        SceneManager.LoadScene(Select);
     }
     
 }
