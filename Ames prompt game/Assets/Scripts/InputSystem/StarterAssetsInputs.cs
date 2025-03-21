@@ -16,7 +16,6 @@ namespace StarterAssets
 		public bool shoot;
         public bool Reload;
         public bool interact;
-		public bool Climb;
 		public bool Slide;
 		public bool Dash;
 		public bool Grapple;
@@ -79,10 +78,6 @@ namespace StarterAssets
 		{
 			InteractInput(value.isPressed);
 		}
-        public void OnClimb(InputValue value)
-        {
-            ClimbInput(value.isPressed);
-        }
         public void OnCrouch(InputValue value)
         {
             CrouchInput(value.isPressed);
@@ -131,10 +126,6 @@ namespace StarterAssets
         public void SlideInput(bool newSlideState)
         {
             Slide = newSlideState;
-        }
-        public void ClimbInput(bool newClimbState)
-        {
-            Climb = newClimbState;
         }
         public void InteractInput(bool newInteractState)
 		{
