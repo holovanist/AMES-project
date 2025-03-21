@@ -253,6 +253,7 @@ GameObject:
   - component: {fileID: 444254390}
   - component: {fileID: 444254389}
   - component: {fileID: 444254388}
+  - component: {fileID: 444254393}
   m_Layer: 0
   m_Name: Cube (8)
   m_TagString: Untagged
@@ -284,9 +285,9 @@ Rigidbody:
   m_ImplicitTensor: 1
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 1
+  m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 1
+  m_CollisionDetection: 0
 --- !u!65 &444254389
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -376,6 +377,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &444254393
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 444254387}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cdaf4a237aa51cc40999795b176b53e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clickCooldown: 0.5
+  throwForce: 600
+  maxDistance: 3
 --- !u!4 &496914939 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4569698508034548783, guid: 384c23c595f7c3c45bb9ef1254936c5d, type: 3}
@@ -983,7 +999,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5af8eea42debee8429a41a9b5727a486, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  q: 0
+  q: 1
 --- !u!1 &1240478711
 GameObject:
   m_ObjectHideFlags: 0
@@ -1118,7 +1134,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1439828501}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: af4048079c7810443bdcbe3fd26142f6, type: 3}
   m_Name: 
@@ -1357,6 +1373,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1747790609}
+  - component: {fileID: 1747790610}
   m_Layer: 0
   m_Name: HoldItemPosition
   m_TagString: Untagged
@@ -1373,12 +1390,24 @@ Transform:
   m_GameObject: {fileID: 1747790608}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 5}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 496914939}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1747790610
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1747790608}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6653ea4c0d768c94f9b2453b03c40b15, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1759702731
 GameObject:
   m_ObjectHideFlags: 0
@@ -1804,6 +1833,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1446740133214460608, guid: 384c23c595f7c3c45bb9ef1254936c5d, type: 3}
+      propertyPath: m_TagString
+      value: playerCap
+      objectReference: {fileID: 0}
     - target: {fileID: 2895826375186146815, guid: 384c23c595f7c3c45bb9ef1254936c5d, type: 3}
       propertyPath: sensX
       value: -3

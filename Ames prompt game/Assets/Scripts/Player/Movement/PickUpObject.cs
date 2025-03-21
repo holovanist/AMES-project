@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class PickUpObject : MonoBehaviour
 {
+    //https://www.youtube.com/watch?v=pPcYr3tL3Sc
     //https://www.youtube.com/watch?v=6bFCQqabfzo
     [Header("Pickup Settings")]
     public Transform holdArea;
@@ -20,7 +21,7 @@ public class PickUpObject : MonoBehaviour
     public bool freezeRotation;
     [SerializeField]
     bool inputDown;
-    bool down;
+    int down;
 
     private void Start()
     {
@@ -30,20 +31,26 @@ public class PickUpObject : MonoBehaviour
     {
         if(it.Grab) inputDown = true;
         else inputDown = false;
-        if(inputDown) down = true;
-        if (inputDown && down)
+        if (inputDown)
         {
-            if(heldObj == null)
+            down = 1;
+            if(down == 1)
             {
-                RaycastHit hit;
-                if(Physics.Raycast(cam.position, cam.forward, out hit, pickupRange))
+                if(heldObj == null)
                 {
-                    PickupObject(hit.transform.gameObject);
+                    RaycastHit hit;
+                    if(Physics.Raycast(cam.position, cam.forward, out hit, pickupRange))
+                    {
+                        if (!hit.collider.gameObject.CompareTag("playerCap"))
+                            PickupObject(hit.transform.gameObject);
+                        else Debug.Log("1");
+                    }
                 }
-            }
-            else
-            {
-                DropObject();
+                else
+                {
+                    DropObject();
+                }
+
             }
         }
         if(heldObj != null)
@@ -59,6 +66,7 @@ public class PickUpObject : MonoBehaviour
             Vector3 movedir = (holdArea.position - heldObj.transform.position);
             heldObjRB.AddForce(movedir * pickupForce, ForceMode.Force);
         }
+        else transform.position = holdArea.position;
     }
     void PickupObject(GameObject pickObj)
     {
@@ -75,7 +83,7 @@ public class PickUpObject : MonoBehaviour
     }
     void DropObject()
     {
-        down = true;
+        down = 0;
         heldObjRB.useGravity = true;
             heldObjRB.linearDamping = dragAfterDrop;
             if (freezeRotation) heldObjRB.constraints = RigidbodyConstraints.None;
