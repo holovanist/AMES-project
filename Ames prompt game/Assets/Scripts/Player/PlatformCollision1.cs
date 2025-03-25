@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class PlatformCollision1 : MonoBehaviour
 {
+    //https://www.youtube.com/watch?v=s6chmaGuDFY
     public string playerTag = "Player";
     public Transform platform;
     public Transform parrent;
