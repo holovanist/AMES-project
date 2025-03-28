@@ -46,9 +46,14 @@ namespace NewMovment
         [Header("Ground Check")]
         public float playerHeight;
         public LayerMask whatIsGround;
+        public LayerMask whatIsMovingPlatform;
         public float maxGroudTime;
         [HideInInspector]
         public bool grounded;
+        [HideInInspector]
+        public bool offMovingPlatform;
+        public float movingPlatformInterpolationDelay = 0.15f;
+        float movingPlatformTimer;
 
         [Header("Slope Handling")]
         public float maxSlopeAngle;
@@ -100,6 +105,8 @@ namespace NewMovment
         public bool freeze;
         [HideInInspector]
         public bool restricted;
+        [HideInInspector]
+        public bool jumping;
 
         void Start()
         {
@@ -115,7 +122,8 @@ namespace NewMovment
         }
         private void Update()
         {
-            grounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.3f, whatIsGround); 
+            grounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.3f, whatIsGround);
+            
             MyInput();
             SpeedControl();
             StateHandler();
@@ -124,7 +132,19 @@ namespace NewMovment
             else
                 rb.linearDamping = 0f;
             if(Speed != null)
-            Speed.SetText("Speed: " + rb.linearVelocity.magnitude);
+            Speed.SetText("Speed: " + string.Format("{0:0.00}", rb.linearVelocity.magnitude));
+            if(offMovingPlatform)
+            {
+                if(movingPlatformTimer <= 0)
+                {
+                    rb.interpolation = RigidbodyInterpolation.Interpolate;
+                    movingPlatformTimer = movingPlatformInterpolationDelay;
+                }
+                else
+                {
+                    movingPlatformTimer -= Time.deltaTime;
+                }
+            }
         }
 
         private void FixedUpdate()
@@ -329,6 +349,11 @@ namespace NewMovment
         }
         private void Jump()
         {
+            jumping = true;
+            if (rb.interpolation == RigidbodyInterpolation.Extrapolate)
+                rb.interpolation = RigidbodyInterpolation.Extrapolate;
+            else
+                rb.interpolation = RigidbodyInterpolation.Interpolate;
             ExitingSlope = true;
 
             rb.linearVelocity = new Vector3(rb.linearVelocity.x, 0f , rb.linearVelocity.z);
@@ -337,6 +362,7 @@ namespace NewMovment
         }
         private void ResetJump()
         {
+            jumping = false;
             readyToJump = true;
 
             ExitingSlope = false;
@@ -376,7 +402,11 @@ namespace NewMovment
                 //GetComponent<Grappling>().StopGrapple();
             }
         }
-
+        private void OnCollisionExit(Collision collision)
+        {
+            if(collision.gameObject.CompareTag("MovingPlatform"))
+                offMovingPlatform = true;
+        }
         public bool OnSlope()
         {
             if(Physics.Raycast(transform.position, Vector3.down, out slopeHit, playerHeight * 0.5f + 0.3f))

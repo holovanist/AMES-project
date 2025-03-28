@@ -10,7 +10,8 @@ public class MovingPlatform : MonoBehaviour
     public float delay = 1f;
     public Transform parrent;
     public string playerTag = "playerCap";
-    //public GameObject platform;
+    public Transform platform;
+    Rigidbody rb;
 
     //private Vector3 targetPosition;
 
@@ -29,9 +30,11 @@ public class MovingPlatform : MonoBehaviour
         departTarget = startPoint;
         destinationTarget = endPoint;
         parrent = GameObject.FindGameObjectWithTag("Player").transform;
+        rb = parrent.GetComponent<Rigidbody>();
         startTime = Time.time;
         journeyLength = Vector3.Distance(departTarget.position, destinationTarget.position);
     }
+
 
     private void Update()
     {
@@ -45,6 +48,7 @@ public class MovingPlatform : MonoBehaviour
         {
             if(Vector3.Distance(transform.position, destinationTarget.position) > 0.01f)
             {
+                
                 float distCovered = (Time.time - startTime) * speed;
 
                 float fractionOfJourney = distCovered / journeyLength;
@@ -85,7 +89,8 @@ public class MovingPlatform : MonoBehaviour
     {
         if (other.gameObject.CompareTag(playerTag))
         {
-            parrent.transform.SetParent(transform);
+            rb.interpolation = RigidbodyInterpolation.Extrapolate;
+            parrent.transform.SetParent(platform);
             //other.gameObject.transform.parent = platform;
         }
     }
@@ -93,6 +98,7 @@ public class MovingPlatform : MonoBehaviour
     {
         if (other.gameObject.CompareTag(playerTag))
         {
+            rb.interpolation = RigidbodyInterpolation.Interpolate;
             parrent.transform.SetParent(null);
             //other.gameObject.transform.parent = null;
         }
