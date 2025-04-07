@@ -7,6 +7,10 @@ TagManager:
   - menu
   - playerCap
   - MovingPlatform
+  - Interactable
+  - PickupItemMask
+  - Scene Start Point
+  - Cam
   layers:
   - Default
   - TransparentFX

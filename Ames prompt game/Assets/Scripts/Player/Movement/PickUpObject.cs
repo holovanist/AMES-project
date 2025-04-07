@@ -38,8 +38,7 @@ public class PickUpObject : MonoBehaviour
             {
                 if(heldObj == null)
                 {
-                    RaycastHit hit;
-                    if(Physics.Raycast(cam.position, cam.forward, out hit, pickupRange))
+                    if (Physics.Raycast(cam.position, cam.forward, out RaycastHit hit, pickupRange))
                     {
                         if (!hit.collider.gameObject.CompareTag("playerCap"))
                             PickupObject(hit.transform.gameObject);
