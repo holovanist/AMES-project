@@ -74,6 +74,7 @@ namespace NewMovment
         Vector3 moveDir;
         Rigidbody rb;
         private StarterAssetsInputs it;
+        Climbing CL;
         //private Climbing cs;
         
         public MovementState state;
@@ -110,6 +111,7 @@ namespace NewMovment
 
         void Start()
         {
+            CL = GetComponent<Climbing>();
             originalSpeedIncreaseMultiplier = speedIncreaseMultiplier;
             //cs = GetComponent<Climbing>();
             it = GetComponent<StarterAssetsInputs>();
@@ -123,7 +125,13 @@ namespace NewMovment
         private void Update()
         {
             grounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.3f, whatIsGround);
-            
+
+            if (CL.enabled == false)
+            {
+                state = MovementState.walking;
+                climbing = false;
+            }
+
             MyInput();
             SpeedControl();
             StateHandler();

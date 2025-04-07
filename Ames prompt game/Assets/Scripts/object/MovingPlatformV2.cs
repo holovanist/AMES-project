@@ -1,5 +1,6 @@
 using NewMovment;
 using System.Collections;
+using TMPro;
 using UnityEngine;
 
 public class MovingPlatformV2 : MonoBehaviour
@@ -8,20 +9,21 @@ public class MovingPlatformV2 : MonoBehaviour
     public float delay = 1f;
     public int startingPoint;
     public Transform[] points;
-    public Transform parrent;
+    public GameObject parrent;
     public string playerTag = "playerCap";
     public Transform platform;
     [SerializeField]
     private int i;
     Rigidbody rb;
     PlayerMovement pm;
+    bool rotationgPlatform;
 
     bool isWaiting;
 
     private void Start()
     {
         transform.position = points[startingPoint].position;
-        parrent = GameObject.FindGameObjectWithTag("Player").transform;
+        parrent = GameObject.FindGameObjectWithTag("Player");
         pm = parrent.GetComponent<PlayerMovement>();
         rb = parrent.GetComponent<Rigidbody>();
     }
@@ -29,6 +31,7 @@ public class MovingPlatformV2 : MonoBehaviour
 
     private void Update()
     {
+        if(!rotationgPlatform)
         Move();
     }
 
@@ -47,13 +50,13 @@ public class MovingPlatformV2 : MonoBehaviour
             else
             {
                 isWaiting = true;
-                StartCoroutine(changeDelay());
+                StartCoroutine(ChangeDelay());
             }
         }
     }
 
 
-    IEnumerator changeDelay()
+    IEnumerator ChangeDelay()
     {
         yield return new WaitForSeconds(delay);
         if (i == points.Length -1)
@@ -69,7 +72,7 @@ public class MovingPlatformV2 : MonoBehaviour
         if (other.gameObject.CompareTag(playerTag))
         {
             pm.offMovingPlatform = false;
-            rb.interpolation = RigidbodyInterpolation.Extrapolate;
+            rb.interpolation = RigidbodyInterpolation.None;
             parrent.transform.SetParent(transform);
         }
     }
@@ -77,6 +80,7 @@ public class MovingPlatformV2 : MonoBehaviour
     {
         if (other.gameObject.CompareTag(playerTag))
         {
+            parrent.GetComponent<PlayerSceneTransfer>().unparrent = false;
             parrent.transform.SetParent(null);
         }
     }

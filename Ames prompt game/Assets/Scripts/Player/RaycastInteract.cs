@@ -13,6 +13,7 @@ namespace player
     public class RaycastInteract : MonoBehaviour
     {
         private StarterAssetsInputs _input;
+        MaskSwitching _maskSwitching;
 
         [SerializeField]
         float interactRange = 4;
@@ -20,17 +21,13 @@ namespace player
         TextMeshProUGUI InteractText;
         public float InteractDelay = 0.1f;
         RaycastHit hit;
-        PlayerHealth PH;
-        PlayerShoot PS;
-        public float HealAmount;
-        public int AmmoAdded;
         // Start is called before the first frame update
         void Start()
         {
-            PS = GetComponent<PlayerShoot>();
-            PH = GetComponent<PlayerHealth>();
+            if( InteractText != null )
             InteractText.enabled = false;
             _input = GetComponent<StarterAssetsInputs>();
+            _maskSwitching = GetComponent<MaskSwitching>();
         }
 
         // Update is called once per frame
@@ -46,36 +43,31 @@ namespace player
                     if (_input.interact)
                     {
                         //needs a small cooldown
-                        hit.collider.gameObject.GetComponent<Animator>().SetTrigger("Interact");
-                        InteractText.enabled = false;
+                        Invoke(nameof(PickupItem), InteractDelay);
+                        if (InteractText != null)
+                            InteractText.enabled = false;
                     }
                 }
-                else if (hit.collider.gameObject.CompareTag("PickupItemAmmo"))
+                else if (hit.collider.gameObject.CompareTag("PickupItemMask"))
                 {
                     InteractText.enabled = true;
                     if (_input.interact)
                     {
                         Invoke(nameof(PickupItemAmmo), InteractDelay);
-                        InteractText.enabled = false;
-                    }
-                }
-                else if (hit.collider.gameObject.CompareTag("PickupItemHealth"))
-                {
-                    InteractText.enabled = true;
-                    if (_input.interact)
-                    {
-                        Invoke(nameof(PickupItemHealth), InteractDelay);
-                        InteractText.enabled = false;
+                        if (InteractText != null)
+                            InteractText.enabled = false;
                     }
                 }
                 else
                 {
-                    InteractText.enabled = false;
+                    if (InteractText != null)
+                        InteractText.enabled = false;
                 }
             }
             else
             {
-                InteractText.enabled = false;
+                if (InteractText != null)
+                    InteractText.enabled = false;
             }
         }
 
@@ -83,20 +75,28 @@ namespace player
         {
             Ray ray = new(Camera.main.transform.position, Camera.main.transform.forward);
             if (Physics.Raycast(ray, out hit, interactRange))
-                if (hit.collider.gameObject.CompareTag("PickupItemAmmo") && _input.interact)
+                if (hit.collider.gameObject.CompareTag("PickupItemMask") && _input.interact)
                 {
-                PS.BulletsAvalible += AmmoAdded;
-                hit.collider.gameObject.SetActive(false);
+                    if (!_maskSwitching.Mask1Collected)
+                        _maskSwitching.Mask1Collected = true;
+                    else if (_maskSwitching.Mask1Collected)
+                        _maskSwitching.Mask2Collected = true;
+                    else if (_maskSwitching.Mask2Collected)
+                        _maskSwitching.Mask3Collected = true;
+                    else if (_maskSwitching.Mask3Collected)
+                        _maskSwitching.Mask4Collected = true;
+                    else if (_maskSwitching.Mask4Collected)
+                        _maskSwitching.Mask5Collected = true;
+                    hit.collider.gameObject.SetActive(false);
                 }
         }
-        public void PickupItemHealth()
+        public void PickupItem()
         {
             Ray ray = new(Camera.main.transform.position, Camera.main.transform.forward);
             if (Physics.Raycast(ray, out hit, interactRange))
-                if (hit.collider.gameObject.CompareTag("PickupItemHealth") && _input.interact)
+                if (hit.collider.gameObject.CompareTag("Interactable") && _input.interact)
                 {
-                hit.collider.gameObject.SetActive(false);
-                PH.health += HealAmount;
+                    hit.collider.gameObject.GetComponent<Animator>().SetTrigger("Interact");
                 }
         }
     }

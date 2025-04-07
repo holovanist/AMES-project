@@ -956,8 +956,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 272.9}
-  m_SizeDelta: {x: 474.282, y: 399.3}
+  m_AnchoredPosition: {x: 0, y: 353.88}
+  m_SizeDelta: {x: 453.9, y: 399.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &761334974
 MonoBehaviour:
@@ -972,14 +972,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.28635636, g: 0.5188679, b: 0.5087253, a: 0.23921569}
+  m_Color: {r: 0.36863655, g: 0.7169812, b: 0.70517284, a: 0.23921569}
   m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: fa3b9df86a98c424bbbcc5ab0e6538a6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 42538d0e76807ec419d61830ce203ee1, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1297,7 +1297,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Robot Mask Escape
+  m_text: Thinking With Masks
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: aeb0a4a7a5329844eafdffe03624303b, type: 2}
   m_sharedMaterial: {fileID: -1294316309986080097, guid: aeb0a4a7a5329844eafdffe03624303b, type: 2}

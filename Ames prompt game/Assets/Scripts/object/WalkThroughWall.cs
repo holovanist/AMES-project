@@ -5,10 +5,11 @@ public class WalkThroughWall : MonoBehaviour
     Collider C;
     LayerMask playerLayer;
     LayerMask reset;
-    public bool q;
+    MaskSwitching MS;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        MS = GameObject.FindGameObjectWithTag("Player").GetComponent<MaskSwitching>();
         playerLayer = LayerMask.GetMask("Player");
         C = GetComponent<Collider>();
     }
@@ -16,7 +17,7 @@ public class WalkThroughWall : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (q)
+        if (MS.wallMask)
         {
             C.excludeLayers = playerLayer;
         }

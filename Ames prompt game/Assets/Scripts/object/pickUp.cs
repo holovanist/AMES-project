@@ -17,11 +17,13 @@ public class pickUp : MonoBehaviour
     TempParrent tp;
     Rigidbody rb;
     StarterAssetsInputs it;
+    MaskSwitching MS;
     
     Vector3 objectPos;
 
     void Start()
     {
+        MS = GameObject.FindGameObjectWithTag("Player").GetComponent<MaskSwitching>();
         click = 0;
         timer = clickCooldown;
         it = GameObject.FindGameObjectWithTag("Player").GetComponent<StarterAssetsInputs>();
@@ -47,7 +49,7 @@ public class pickUp : MonoBehaviour
     {
         if(tp!= null)
         {   
-            if(it.Grab && !isHolding && click == 0)
+            if(it.Grab && !isHolding && click == 0 && MS.PickUp)
             {
                 click = 1;
                 distance = Vector3.Distance(this.transform.position, tp.transform.position);
