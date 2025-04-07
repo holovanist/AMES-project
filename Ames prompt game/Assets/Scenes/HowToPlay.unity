@@ -433,7 +433,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelToLoad: Level 1
+  Select: DifficultySelect
   MainMenu1: Start Menu
+  HowToPlay1: HowToPlay
+  Controls1: Controls
 --- !u!1 &1037031207
 GameObject:
   m_ObjectHideFlags: 0
@@ -823,8 +826,12 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: To play this game you have to find and use a mask to complete puzzles on
-    each level.
+  m_text: 'To play this game you have to find and use a mask to complete puzzles
+    and get to the teleporter at the end of each level.
+
+
+    There is also collectables
+    you can find during the levels and see how many you have at the end of the game.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: aeb0a4a7a5329844eafdffe03624303b, type: 2}
   m_sharedMaterial: {fileID: -1294316309986080097, guid: aeb0a4a7a5329844eafdffe03624303b, type: 2}
