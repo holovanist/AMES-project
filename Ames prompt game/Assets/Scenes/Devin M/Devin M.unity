@@ -660,10 +660,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: TableWithDecorations1
       objectReference: {fileID: 0}
-    - target: {fileID: 5070001835975542683, guid: c4dcd73c9ab7fd64a86c1a8322419d51, type: 3}
-      propertyPath: 'm_Materials.Array.data[0]'
-      value: 
-      objectReference: {fileID: 2100000, guid: fff56495c24744342b617f59b90aaf3c, type: 2}
     - target: {fileID: 5654900377822481353, guid: c4dcd73c9ab7fd64a86c1a8322419d51, type: 3}
       propertyPath: m_LocalPosition.x
       value: 687.282
@@ -704,14 +700,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5894605277374693491, guid: c4dcd73c9ab7fd64a86c1a8322419d51, type: 3}
-      propertyPath: 'm_Materials.Array.data[0]'
-      value: 
-      objectReference: {fileID: 2100000, guid: fff56495c24744342b617f59b90aaf3c, type: 2}
-    - target: {fileID: 8608246367208814142, guid: c4dcd73c9ab7fd64a86c1a8322419d51, type: 3}
-      propertyPath: 'm_Materials.Array.data[0]'
-      value: 
-      objectReference: {fileID: 2100000, guid: fff56495c24744342b617f59b90aaf3c, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
