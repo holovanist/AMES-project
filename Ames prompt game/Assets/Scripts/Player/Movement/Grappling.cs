@@ -6,6 +6,7 @@ using UnityEngine.Rendering.VirtualTexturing;
 
 public class Grappling : MonoBehaviour
 {
+    //https://www.youtube.com/watch?v=HPjuTK91MA8
     [Header("References")]
     private PlayerMovement pm;
     private StarterAssetsInputs it;
@@ -65,7 +66,7 @@ public class Grappling : MonoBehaviour
 
         grappling = true;
 
-        pm.freeze = true;
+        //pm.freeze = true;
 
         if (Physics.Raycast(cam.position, cam.forward, out RaycastHit hit, maxGrappleDistance, WhatIsGrappleable))
         {

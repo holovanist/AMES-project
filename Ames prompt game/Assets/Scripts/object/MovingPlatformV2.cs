@@ -16,7 +16,7 @@ public class MovingPlatformV2 : MonoBehaviour
     private int i;
     Rigidbody rb;
     PlayerMovement pm;
-    bool rotationgPlatform;
+    public bool rotationgPlatform;
 
     bool isWaiting;
     public bool moveBackwards;
@@ -24,6 +24,7 @@ public class MovingPlatformV2 : MonoBehaviour
 
     private void Start()
     {
+        if(!rotationgPlatform)
         transform.position = points[startingPoint].position;
         parrent = GameObject.FindGameObjectWithTag("Player");
         pm = parrent.GetComponent<PlayerMovement>();
@@ -40,7 +41,7 @@ public class MovingPlatformV2 : MonoBehaviour
 
     private void Move()
     {
-        if (!isWaiting)
+        if (!isWaiting && !rotationgPlatform)
         {
             if (Vector3.Distance(transform.position, points[i].position) > 0.02f)
             {

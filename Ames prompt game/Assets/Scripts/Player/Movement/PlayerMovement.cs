@@ -145,7 +145,7 @@ namespace NewMovment
             {
                 if(movingPlatformTimer <= 0)
                 {
-                    rb.interpolation = RigidbodyInterpolation.Interpolate;
+                    //rb.interpolation = RigidbodyInterpolation.Interpolate;
                     movingPlatformTimer = movingPlatformInterpolationDelay;
                 }
                 else
@@ -361,7 +361,7 @@ namespace NewMovment
             if (rb.interpolation == RigidbodyInterpolation.None)
                 rb.interpolation = RigidbodyInterpolation.Extrapolate;
             else
-                rb.interpolation = RigidbodyInterpolation.Interpolate;
+                //rb.interpolation = RigidbodyInterpolation.Interpolate;
             ExitingSlope = true;
 
             rb.linearVelocity = new Vector3(rb.linearVelocity.x, 0f , rb.linearVelocity.z);
@@ -388,11 +388,13 @@ namespace NewMovment
         }
 
         private Vector3 velocityToSet;
+        public float multiplier;
 
         private void SetVelocity()
         {
             enableMovementOnNextTouch = true;
-            rb.linearVelocity = velocityToSet;
+            rb.AddForce(velocityToSet * multiplier, ForceMode.Impulse);
+            //rb.linearVelocity = velocityToSet;
         }
 
         public void ResetRestrictions()

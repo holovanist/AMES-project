@@ -35,7 +35,7 @@ namespace player
         public float TimeBetweenAbilities;
         public float saveCoolDown;
         public int Ability1Bullets;
-        bool /*Ability1Active,*/ ReadyToActivate; 
+        //bool /*Ability1Active,*/ ReadyToActivate; 
         public bool SaveCoolDownActive {  get; set; }
 
         [Header("Referance Objects")]
@@ -59,7 +59,7 @@ namespace player
         {
             BulletsLeft = MagSize;
             ReadyToShoot = true;
-            ReadyToActivate = true;
+            //ReadyToActivate = true;
         }
         void Start()
         {
@@ -155,7 +155,7 @@ namespace player
         }
         private void Ability1()
         {
-            ReadyToActivate = false;
+            //ReadyToActivate = false;
             Ray ray = Cam.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
 
             Vector3 targetPoint;
@@ -209,7 +209,7 @@ namespace player
         {
             SaveCoolDownActive = false;
             saveCoolDown = TimeBetweenAbilities;
-            ReadyToActivate = true;
+            //ReadyToActivate = true;
             AllowInvokeAbility = true;
             animationActiveAbility = false;
         }
