@@ -538,6 +538,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player Set Up
       objectReference: {fileID: 0}
+    - target: {fileID: 5514641501171364470, guid: 384c23c595f7c3c45bb9ef1254936c5d, type: 3}
+      propertyPath: InteractText
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 8398454772456807495, guid: 384c23c595f7c3c45bb9ef1254936c5d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 685.453
@@ -634,6 +638,10 @@ PrefabInstance:
     - target: {fileID: 2211619195155264349, guid: cbb7113cf0b709949a97987b5849545d, type: 3}
       propertyPath: m_Name
       value: Potion1a (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2211619195155264349, guid: cbb7113cf0b709949a97987b5849545d, type: 3}
+      propertyPath: m_TagString
+      value: Interactable
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
