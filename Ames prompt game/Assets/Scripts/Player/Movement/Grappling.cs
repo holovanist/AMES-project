@@ -26,7 +26,8 @@ public class Grappling : MonoBehaviour
     private float grapplingCdTimer;
 
     private bool grappling;
-    //bool buttonPressed;
+    bool buttonPressed;
+    bool buttonReleased;
     private void Start()
     {
         pm = GetComponent<PlayerMovement>();
@@ -35,12 +36,21 @@ public class Grappling : MonoBehaviour
 
     private void Update()
     {
-           //if(it.Grapple) buttonPressed = true;
-           //else buttonPressed = false;
-           if(it.Grapple /*&& buttonPressed*/) StartGrapple();
+        if (it.Grapple && buttonReleased)
+        {
+            buttonReleased = false;
+            buttonPressed = true;
+        }
+        else if (!it.Grapple)
+            buttonReleased = true;
+        if (it.Grapple && buttonPressed)
+        {
+            StartGrapple();
+            buttonPressed = false;
+        }
 
-           if (grapplingCdTimer > 0)
-               grapplingCdTimer -= Time.deltaTime;
+        if (grapplingCdTimer > 0)
+            grapplingCdTimer -= Time.deltaTime;
     }
 
     private void LateUpdate()

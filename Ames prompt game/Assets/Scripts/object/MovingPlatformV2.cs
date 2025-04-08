@@ -19,6 +19,8 @@ public class MovingPlatformV2 : MonoBehaviour
     bool rotationgPlatform;
 
     bool isWaiting;
+    public bool moveBackwards;
+    bool movingBackwards;
 
     private void Start()
     {
@@ -61,10 +63,26 @@ public class MovingPlatformV2 : MonoBehaviour
         yield return new WaitForSeconds(delay);
         if (i == points.Length -1)
         {
-            i = 0;
+            if(!moveBackwards)
+                i = 0;
+            else if(moveBackwards)
+            {
+                movingBackwards = true;
+                i--;
+            }
+        }
+        else if (i == 0 && movingBackwards)
+        {
+            movingBackwards = false;
         }
         else
-        i++;
+        {
+            if (!movingBackwards)
+                i++;
+            else if (movingBackwards)
+                i--;
+
+        }
         isWaiting = false;
     }
     private void OnTriggerEnter(Collider other)

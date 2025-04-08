@@ -310,7 +310,7 @@ namespace NewMovment
         {
             if(state == MovementState.dashing) return;
             if(restricted) return;
-            if(activeGrapple) return;
+            //if(activeGrapple) return;
 
             //if (cs.exitingWall) return;
 
@@ -334,7 +334,7 @@ namespace NewMovment
         }
         private void SpeedControl()
         {
-            if(activeGrapple) return;
+            //if(activeGrapple) return;
 
             if (OnSlope() && !ExitingSlope)
             {
@@ -358,7 +358,7 @@ namespace NewMovment
         private void Jump()
         {
             jumping = true;
-            if (rb.interpolation == RigidbodyInterpolation.Extrapolate)
+            if (rb.interpolation == RigidbodyInterpolation.None)
                 rb.interpolation = RigidbodyInterpolation.Extrapolate;
             else
                 rb.interpolation = RigidbodyInterpolation.Interpolate;
