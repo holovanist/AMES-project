@@ -34,8 +34,10 @@ public class PlayerSceneTransfer : MonoBehaviour
         if (menu == null)
         {
             player2.SetActive(true);
+            if (GetComponentInChildren<Canvas>() != null)
             GetComponentInChildren<Canvas>().enabled = true;
         }
+        if (SpawnPos != null) gameObject.transform.position = SpawnPos.transform.position;
     }
 
     void Awake()

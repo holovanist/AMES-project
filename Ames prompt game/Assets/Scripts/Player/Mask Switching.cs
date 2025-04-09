@@ -38,7 +38,7 @@ public class MaskSwitching : MonoBehaviour
     {
         if (mask != 5 || mask! < 6)
         {
-            if (Input.GetKeyUp(KeyCode.L))
+            if (Input.GetKeyUp(KeyCode.Alpha1))
             {
                 mask++;
             }
