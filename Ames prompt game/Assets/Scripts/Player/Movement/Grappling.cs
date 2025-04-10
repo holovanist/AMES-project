@@ -71,7 +71,6 @@ public class Grappling : MonoBehaviour
         if (Physics.Raycast(cam.position, cam.forward, out RaycastHit hit, maxGrappleDistance, WhatIsGrappleable))
         {
             grapplePoint = hit.point;
-
             Invoke(nameof(ExecuteGrapple), grappleDelayTime);
         }
         else
