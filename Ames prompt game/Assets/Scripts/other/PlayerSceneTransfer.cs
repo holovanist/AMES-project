@@ -28,12 +28,13 @@ public class PlayerSceneTransfer : MonoBehaviour
         SpawnPos = GameObject.FindGameObjectWithTag("Scene Start Point");
         if (menu != null)
         {
-            player2.SetActive(false);
-            GetComponentInChildren<Canvas>().enabled = false;
+            GetComponent<Rigidbody>().isKinematic = true;
+            if (GetComponentInChildren<Canvas>() != null)
+                GetComponentInChildren<Canvas>().enabled = false;
         }
         if (menu == null)
         {
-            player2.SetActive(true);
+            GetComponent<Rigidbody>().isKinematic = false;
             if (GetComponentInChildren<Canvas>() != null)
             GetComponentInChildren<Canvas>().enabled = true;
         }
@@ -98,13 +99,15 @@ public class PlayerSceneTransfer : MonoBehaviour
         }
         if (menu != null)
         {
-            player.SetActive(false);
-            GetComponentInChildren<Canvas>().enabled = false;
+            GetComponent<Rigidbody>().isKinematic = true;
+            if (GetComponentInChildren<Canvas>() != null)
+                GetComponentInChildren<Canvas>().enabled = false;
         }
         if (menu == null)
         {
-            player.SetActive(true);
-            GetComponentInChildren<Canvas>().enabled = true;
+            GetComponent<Rigidbody>().isKinematic = false;
+            if (GetComponentInChildren<Canvas>() != null)
+                GetComponentInChildren<Canvas>().enabled = true;
         }
         SpawnPos = GameObject.FindGameObjectWithTag("Scene Start Point");
         count = 1;

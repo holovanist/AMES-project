@@ -7,10 +7,10 @@ public class MainMenu : MonoBehaviour
 {
     [SerializeField]
     string levelToLoad = "Level 1";
-    string levelToLoad2 = "Level 1 Hard";
+    public string levelToLoad2 = "Level 1 Hard";
     public string Select = "DifficultySelect";
-    public string MainMenu1 = "Start Menu";
-    public string HowToPlay1 = "HowToPlay";
+    public string mainMenu = "Start Menu";
+    public string HowToPlay = "HowToPlay";
     public string Controls1 = "Controls";
     
     public void StartEasyGame()
@@ -29,11 +29,11 @@ public class MainMenu : MonoBehaviour
     }
     public void QuitToMenu()
     {
-        SceneManager.LoadScene(MainMenu1);
+        SceneManager.LoadScene(mainMenu);
     }
-    public void HowToPlay()
+    public void HowToPlay1()
     {
-        SceneManager.LoadScene(HowToPlay1);
+        SceneManager.LoadScene(HowToPlay);
     }
     public void Controls()
     {

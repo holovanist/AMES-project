@@ -23,6 +23,16 @@ namespace NewMovment
         {
             menu = GameObject.FindGameObjectWithTag("menu");
             _input = GameObject.FindGameObjectWithTag("Player").GetComponent<StarterAssetsInputs>();
+            if (menu == null)
+            {
+                Cursor.lockState = CursorLockMode.Locked;
+                Cursor.visible = false;
+            }
+            else if (menu != null)
+            {
+                Cursor.visible = true;
+                Cursor.lockState = CursorLockMode.None;
+            }
         }
         private void Update()
         {
@@ -45,9 +55,10 @@ namespace NewMovment
                 Cursor.lockState = CursorLockMode.Locked;
                 Cursor.visible = false;
             }
-            else
+            else if (menu != null)
             {
                 Cursor.visible = true;
+                Cursor.lockState = CursorLockMode.None;
             }
         }
         private void OnApplicationFocus(bool focus)
@@ -57,9 +68,10 @@ namespace NewMovment
                 Cursor.lockState = CursorLockMode.Locked;
                 Cursor.visible = false;
             }
-            else
+            else if(menu != null)
             {
                 Cursor.visible = true;
+                Cursor.lockState = CursorLockMode.None;
             }   
         }
     }
