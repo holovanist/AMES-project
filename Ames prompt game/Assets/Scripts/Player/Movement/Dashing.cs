@@ -101,7 +101,7 @@ public class Dashing : MonoBehaviour
         if (verticalInput == 0 && horizontalInput == 0)
             dir = forwardT.forward;
 
-        return dir.normalized;
+        return dir;
     }
 
 }

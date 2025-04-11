@@ -310,7 +310,7 @@ namespace NewMovment
 
         private void MovePlayer()
         {
-            if(state == MovementState.dashing) return;
+            //if(state == MovementState.dashing) return;
             if(restricted) return;
             //if(activeGrapple) return;
 
@@ -337,22 +337,25 @@ namespace NewMovment
         private void SpeedControl()
         {
             //if(activeGrapple) return;
-
-            if (OnSlope() && !ExitingSlope)
+            if (!dashing)
             {
-                if(rb.linearVelocity.magnitude > moveSpeed)
-                    rb.linearVelocity = rb.linearVelocity.normalized * moveSpeed;
-            }
-            else
-            {
-                Vector3 flatVel = new(rb.linearVelocity.x, 0f, rb.linearVelocity.z);
-                if(flatVel.magnitude > moveSpeed)
+                if (OnSlope() && !ExitingSlope)
                 {
-                        Vector3 limetedVel = flatVel.normalized * moveSpeed;
-                        rb.linearVelocity = new Vector3(limetedVel.x, rb.linearVelocity.y, limetedVel.z);
+                    if(rb.linearVelocity.magnitude > moveSpeed)
+                        rb.linearVelocity = rb.linearVelocity.normalized * moveSpeed;
                 }
-
+                else
+                {
+                    Vector3 flatVel = new(rb.linearVelocity.x, 0f, rb.linearVelocity.z);
+                    if(flatVel.magnitude > moveSpeed)
+                    {
+                            Vector3 limetedVel = flatVel.normalized * moveSpeed;
+                            rb.linearVelocity = new Vector3(limetedVel.x, rb.linearVelocity.y, limetedVel.z);
+                    }
+                }
             }
+
+
 
             if(maxYSpeed != 0 && rb.linearVelocity.y > maxYSpeed)
                 rb.linearVelocity = new Vector3(rb.linearVelocity.x, maxYSpeed, rb.linearVelocity.z);
