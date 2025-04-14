@@ -36,6 +36,7 @@ namespace NewMovment
         public float jumpCooldown;
         public float airMultiplier;
         bool readyToJump;
+        public float slideJumpMultiplier = 1;
 
         [Header("Crouching")]
         public float crouchSpeed;
@@ -170,14 +171,21 @@ namespace NewMovment
             horizontalInput = it.move.x;
             verticalInput = it.move.y;
 
-            if(it.jump && readyToJump && grounded)
+            if(it.jump && readyToJump && grounded && !sliding)
             {
                 readyToJump = false;
                 Jump();
 
                 Invoke(nameof(ResetJump), jumpCooldown);
             }
-            if(it.crouch && !crouching && !wallrunning)
+            if (it.jump && readyToJump && grounded && sliding)
+            {
+                readyToJump = false;
+                SlideJump();
+
+                Invoke(nameof(ResetJump), jumpCooldown);
+            }
+            if (it.crouch && !crouching && !wallrunning)
             {
                 crouching = true;
                 transform.localScale = new Vector3(transform.localScale.x, crouchYScale, transform.localScale.z);
@@ -372,6 +380,19 @@ namespace NewMovment
             rb.linearVelocity = new Vector3(rb.linearVelocity.x, 0f , rb.linearVelocity.z);
 
             rb.AddForce(transform.up * jumpForce, ForceMode.Impulse);
+        }
+        private void SlideJump()
+        {
+            jumping = true;
+            if (rb.interpolation == RigidbodyInterpolation.None)
+                rb.interpolation = RigidbodyInterpolation.Extrapolate;
+            else
+                //rb.interpolation = RigidbodyInterpolation.Interpolate;
+                ExitingSlope = true;
+
+            rb.linearVelocity = new Vector3(rb.linearVelocity.x, 0f, rb.linearVelocity.z);
+
+            rb.AddForce(slideJumpMultiplier * jumpForce * transform.up, ForceMode.Impulse);
         }
         private void ResetJump()
         {

@@ -41,15 +41,15 @@ namespace NewMovment
 
         void Update()
         {
-            horizontalInput = it.move.x; 
+            horizontalInput = it.move.x;
             verticalInput = it.move.y;
 
-            if (it.Slide && (horizontalInput != 0 || verticalInput != 0) && !pm.sliding && !wasSliding)
+            if (it.Slide && (horizontalInput != 0 || verticalInput != 0) && !pm.sliding && !wasSliding && !it.jump && !pm.jumping)
             {
                 StartSlide();
                 wasSliding = true;
             }
-            if (!it.Slide && pm.sliding)
+            if (!it.Slide && pm.sliding || it.jump && pm.sliding)
             {
                 StopSlide();
                 
