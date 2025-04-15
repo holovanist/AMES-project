@@ -174,7 +174,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: bc3bf0ae61852064bab8325349fc9907, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -328,6 +328,8 @@ MonoBehaviour:
   playerTag: playerCap
   platform: {fileID: 0}
   i: 0
+  rotationgPlatform: 0
+  moveBackwards: 0
 --- !u!65 &8626323526005558327
 BoxCollider:
   m_ObjectHideFlags: 0
