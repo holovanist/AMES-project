@@ -219,6 +219,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6389486574465129674, guid: 8c4727191efd7b74c89ed7cfab65e8d4, type: 3}
+      propertyPath: m_TagString
+      value: menu
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -765,12 +769,20 @@ PrefabInstance:
       value: 0.5206
       objectReference: {fileID: 0}
     - target: {fileID: 2895826375186146815, guid: 384c23c595f7c3c45bb9ef1254936c5d, type: 3}
+      propertyPath: menu
+      value: 
+      objectReference: {fileID: 1983108747}
+    - target: {fileID: 2895826375186146815, guid: 384c23c595f7c3c45bb9ef1254936c5d, type: 3}
       propertyPath: sensX
       value: -5
       objectReference: {fileID: 0}
     - target: {fileID: 2895826375186146815, guid: 384c23c595f7c3c45bb9ef1254936c5d, type: 3}
       propertyPath: sensY
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2895826375186146815, guid: 384c23c595f7c3c45bb9ef1254936c5d, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3961932207933209194, guid: 384c23c595f7c3c45bb9ef1254936c5d, type: 3}
       propertyPath: m_Name
@@ -903,6 +915,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cbb7113cf0b709949a97987b5849545d, type: 3}
+--- !u!1 &1983108747 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6389486574465129674, guid: 8c4727191efd7b74c89ed7cfab65e8d4, type: 3}
+  m_PrefabInstance: {fileID: 229770973}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &793419067749512349
 PrefabInstance:
   m_ObjectHideFlags: 0
