@@ -68,6 +68,10 @@ public class MaskSwitching : MonoBehaviour
         {
             mask = -1;
         }
+        else if (mask == 5)
+        {
+            mask = -1;
+        }
         if (mask == -1)
         {
             Grapple.enabled = false;

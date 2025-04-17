@@ -31,6 +31,8 @@ namespace NewMovment
         private float lastDesiredMoveSpeed;
 
         public float GroundDrag;
+
+        public float divisionOfSpeed = 2f;
         [Header("Jumping")]
         public float jumpForce;
         public float jumpCooldown;
@@ -82,6 +84,7 @@ namespace NewMovment
         public enum MovementState
         {
             freeze,
+            grapple,
             walking,
             sprinting,
             wallrunning,
@@ -203,25 +206,32 @@ namespace NewMovment
         private bool keepMomentum;
         private void StateHandler()
         {
-            if(dashing)
+            if (activeGrapple)
+            {
+                state = MovementState.grapple;
+                desiredMoveSpeed = velocityToSet.magnitude / divisionOfSpeed;
+
+            }
+
+            else if (dashing)
             {
                 state = MovementState.dashing;
                 desiredMoveSpeed = dashSpeed;
                 speedIncreaseMultiplier = dashSpeedIncreaseMultiplier;
             }
-            else if(freeze)
+            else if (freeze)
             {
                 state = MovementState.freeze;
                 desiredMoveSpeed = 0;
                 rb.linearVelocity = Vector3.zero;
             }
-            else if(climbing)
+            else if (climbing)
             {
                 keepMomentum = true;
                 state = MovementState.climbing;
                 desiredMoveSpeed = climbSpeed;
             }
-            else if(sliding)
+            else if (sliding)
             {
                 state = MovementState.sliding;
 
@@ -250,7 +260,7 @@ namespace NewMovment
                 keepMomentum = true;
                 desiredMoveSpeed = sprintSpeed;
             }
-            else if(grounded)
+            else if (grounded)
             {
                 state = MovementState.walking;
                 desiredMoveSpeed = walkSpeed;
