@@ -246,7 +246,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7710470218501613204, guid: e9eb45089568e8040a82fe4abd52faa6, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.2200055
+      value: 2.05
       objectReference: {fileID: 0}
     - target: {fileID: 7710470218501613204, guid: e9eb45089568e8040a82fe4abd52faa6, type: 3}
       propertyPath: m_LocalPosition.z
@@ -756,6 +756,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 839758424718067175, guid: 384c23c595f7c3c45bb9ef1254936c5d, type: 3}
+      propertyPath: field of view
+      value: 60.000004
+      objectReference: {fileID: 0}
+    - target: {fileID: 839758424718067175, guid: 384c23c595f7c3c45bb9ef1254936c5d, type: 3}
+      propertyPath: m_FocalLength
+      value: 20.78461
+      objectReference: {fileID: 0}
+    - target: {fileID: 839758424718067175, guid: 384c23c595f7c3c45bb9ef1254936c5d, type: 3}
+      propertyPath: m_projectionMatrixMode
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1864124020180773883, guid: 384c23c595f7c3c45bb9ef1254936c5d, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.5
