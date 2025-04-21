@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Start Menu.unity
     guid: 5b346b0ba9ea8d5438949361e8592bb7
   - enabled: 1
+    path: Assets/Scenes/Start Menu 1.unity
+    guid: 6aae2505eb08844488c711561d044174
+  - enabled: 1
     path: Assets/Scenes/HowToPlay.unity
     guid: 20d0221fa30eb4f4a81f8c1848e0f0af
   - enabled: 1
@@ -17,6 +20,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/WinScreen.unity
     guid: 3a366598ce0059e48a129c3084f682fe
+  - enabled: 1
+    path: Assets/Scenes/WinScreen 1.unity
+    guid: c21ccf6684a6dc04aaa7f4d1f4dc8bbc
   - enabled: 1
     path: Assets/Scenes/Sheadan M/Level 1.unity
     guid: 18794cb7e2a6a274aa5088cb15732593
@@ -32,9 +38,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Sheadan M/Level 5.unity
     guid: 90b5beb13ceb399498122443a18b2119
-  - enabled: 1
-    path: Assets/Scenes/Sheadan M/Level 6.unity
-    guid: 17a69ae5afea3b747909c5ae04420c19
   - enabled: 1
     path: Assets/Scenes/DifficultySelect.unity
     guid: 9ef28f3e157007040ac6bfd253f6aad5
