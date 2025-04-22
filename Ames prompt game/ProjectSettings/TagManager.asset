@@ -11,6 +11,7 @@ TagManager:
   - PickupItemMask
   - Scene Start Point
   - Cam
+  - ButtonController
   layers:
   - Default
   - TransparentFX
