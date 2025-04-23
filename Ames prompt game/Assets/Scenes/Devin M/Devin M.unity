@@ -989,6 +989,63 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6389486574465129674, guid: 8c4727191efd7b74c89ed7cfab65e8d4, type: 3}
   m_PrefabInstance: {fileID: 229770973}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &356036794904955169
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 6222795857619715963, guid: 4bc80f53c99607741870c6347039273d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 687.2883
+      objectReference: {fileID: 0}
+    - target: {fileID: 6222795857619715963, guid: 4bc80f53c99607741870c6347039273d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.0000052452087
+      objectReference: {fileID: 0}
+    - target: {fileID: 6222795857619715963, guid: 4bc80f53c99607741870c6347039273d, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 408.22
+      objectReference: {fileID: 0}
+    - target: {fileID: 6222795857619715963, guid: 4bc80f53c99607741870c6347039273d, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 6222795857619715963, guid: 4bc80f53c99607741870c6347039273d, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6222795857619715963, guid: 4bc80f53c99607741870c6347039273d, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 6222795857619715963, guid: 4bc80f53c99607741870c6347039273d, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6222795857619715963, guid: 4bc80f53c99607741870c6347039273d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6222795857619715963, guid: 4bc80f53c99607741870c6347039273d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 6222795857619715963, guid: 4bc80f53c99607741870c6347039273d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6705894412150529473, guid: 4bc80f53c99607741870c6347039273d, type: 3}
+      propertyPath: m_Name
+      value: RoboStart1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4bc80f53c99607741870c6347039273d, type: 3}
 --- !u!1001 &793419067749512349
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2116,3 +2173,4 @@ SceneRoots:
   - {fileID: 5377913749397648126}
   - {fileID: 2893010043699782671}
   - {fileID: 6212279462205886158}
+  - {fileID: 356036794904955169}
