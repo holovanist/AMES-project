@@ -10,6 +10,7 @@ public class ButtonController : MonoBehaviour
     private int i;
     public bool needsUpdate;
     public bool needUpdate;
+    public bool oppisite;
     Animator anim;
     public string animationTriggerUp;
     public string animationTriggerDown;
@@ -44,16 +45,31 @@ public class ButtonController : MonoBehaviour
 
         foreach (var button in buttons)
         {
-            
-            if (button.GetComponent<Button>().pressed == true && needsUpdate)
+            if (!oppisite)
             {
-                i++;
-                needsUpdate = false;
+                if (button.GetComponent<Button>().pressed == true && needsUpdate)
+                {
+                    i++;
+                    needsUpdate = false;
+                }
+                if (button.GetComponent<Button>().pressed == false &&needUpdate)
+                {
+                    i--;
+                    needUpdate = false;
+                }
             }
-            if (button.GetComponent<Button>().pressed == false &&needUpdate)
+            else if (oppisite)
             {
-                i--;
-                needUpdate = false;
+                if (button.GetComponent<Button>().pressed == true && needsUpdate)
+                {
+                    i--;
+                    needsUpdate = false;
+                }
+                if (button.GetComponent<Button>().pressed == false && needUpdate)
+                {
+                    i++;
+                    needUpdate = false;
+                }
             }
         }
     }
