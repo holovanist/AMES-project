@@ -1718,6 +1718,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2709422569712252500, guid: 604cb50c19a9de942b94d3489f892d5d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3312002179688548708, guid: 604cb50c19a9de942b94d3489f892d5d, type: 3}
       propertyPath: m_VertexColorAlwaysGammaSpace
       value: 1
@@ -1808,6 +1812,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5217681633928150966, guid: 604cb50c19a9de942b94d3489f892d5d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5255651308587563945, guid: 604cb50c19a9de942b94d3489f892d5d, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
