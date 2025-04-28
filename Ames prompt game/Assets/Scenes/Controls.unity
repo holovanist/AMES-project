@@ -185,7 +185,9 @@ MonoBehaviour:
     Space = Jump
 
     Escape
-    = Pause Menu'
+    = Pause Menu
+
+    Left Click = Use Mask Ability'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: aeb0a4a7a5329844eafdffe03624303b, type: 2}
   m_sharedMaterial: {fileID: -1294316309986080097, guid: aeb0a4a7a5329844eafdffe03624303b, type: 2}
@@ -565,9 +567,7 @@ MonoBehaviour:
     D = Right
 
     1 = Activate
-    Grapple
-
-    Left Click = Use Mask Ability
+    Mask Ability
 
 
 '
@@ -1162,8 +1162,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelToLoad: Level 1
-  levelToLoad2: Level 1 Hard
-  Select: DifficultySelect
   mainMenu: Start Menu
   HowToPlay: HowToPlay
   Controls1: Controls
