@@ -6,6 +6,7 @@ public class WalkThroughWall : MonoBehaviour
     LayerMask playerLayer;
     LayerMask reset;
     MaskSwitching MS;
+    public LayerMask cube;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -19,7 +20,7 @@ public class WalkThroughWall : MonoBehaviour
     {
         if (MS.wallMask)
         {
-            C.excludeLayers = playerLayer;
+            C.excludeLayers = playerLayer + cube;
         }
         else
         {

@@ -11,11 +11,10 @@ public class Button : MonoBehaviour
     Animator anim;
     public string animationTriggerUp;
     public string animationTriggerDown;
-    ButtonController BC;
+    public ButtonController BC;
 
     private void Start()
     {
-        BC = GameObject.FindGameObjectWithTag("ButtonController").GetComponent<ButtonController>();
     }
     private void OnCollisionEnter(Collision collision)
     {
