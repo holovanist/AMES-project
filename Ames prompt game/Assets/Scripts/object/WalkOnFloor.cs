@@ -3,9 +3,11 @@ using UnityEngine;
 public class WalkOnFloor : MonoBehaviour
 {
     Collider C;
+    public LayerMask cube;
     LayerMask playerLayer;
     LayerMask reset;
     MaskSwitching MS;
+    public bool oppisite;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -17,13 +19,27 @@ public class WalkOnFloor : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!MS.floorMask)
+        if (!oppisite)
         {
-            C.excludeLayers = playerLayer;
+            if (!MS.floorMask)
+            {
+                C.excludeLayers = playerLayer + cube;
+            }
+            else
+            {
+                C.excludeLayers = reset;
+            }
         }
-        else
+        else if (oppisite)
         {
-            C.excludeLayers = reset;
+            if (MS.floorMask)
+            {
+                C.excludeLayers = playerLayer;
+            }
+            else
+            {
+                C.excludeLayers = reset;
+            }
         }
     }
     private void OnLevelWasLoaded(int level)
