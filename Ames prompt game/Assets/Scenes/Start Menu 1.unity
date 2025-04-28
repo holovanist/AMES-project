@@ -1335,7 +1335,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1610055792}
         m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
-        m_MethodName: DifficultySelect
+        m_MethodName: StartEasyGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2551,6 +2551,7 @@ MonoBehaviour:
   speedIncreaseMultiplier: 1.5
   slopeIncreaseMultiplier: 2.5
   GroundDrag: 4
+  divisionOfSpeed: 2
   jumpForce: 14
   jumpCooldown: 0.25
   airMultiplier: 0.4

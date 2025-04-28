@@ -564,6 +564,11 @@ MonoBehaviour:
 
     D = Right
 
+    1 = Activate
+    Grapple
+
+    Left Click = Use Mask Ability
+
 
 '
   m_isRightToLeft: 0
