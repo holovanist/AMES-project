@@ -24,9 +24,9 @@ public class SaveScript : MonoBehaviour
         System.IO.File.WriteAllText(file, myDataString);
         //Debug.Log(file);
     }
-    private void Update()
+    private void OnLevelWasLoaded(int level)
     {
-
+        Save();
     }
     public void Load()
     {
