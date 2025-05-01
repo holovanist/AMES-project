@@ -18,6 +18,7 @@ public class pickUp : MonoBehaviour
     Rigidbody rb;
     StarterAssetsInputs it;
     MaskSwitching MS;
+    public GameObject parrent;
     
     Vector3 objectPos;
 
@@ -113,7 +114,7 @@ public class pickUp : MonoBehaviour
             isHolding = false;
             objectPos = this.transform.position;
             this.transform.position = objectPos;
-            this.transform.SetParent(null);
+            this.transform.SetParent(parrent.transform);
             rb.useGravity = true;
         }    
     }

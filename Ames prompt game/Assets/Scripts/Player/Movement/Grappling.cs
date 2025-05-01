@@ -14,6 +14,8 @@ public class Grappling : MonoBehaviour
     public Transform gunTip;
     public LayerMask WhatIsGrappleable;
     public LineRenderer lr;
+    public AudioClip collisionSound;
+    private AudioSource audioSource;
 
     [Header("Grappling")]
     public float maxGrappleDistance;
@@ -33,6 +35,7 @@ public class Grappling : MonoBehaviour
     {
         pm = GetComponent<PlayerMovement>();
         it = GetComponent<StarterAssetsInputs>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     private void Update()
@@ -41,6 +44,8 @@ public class Grappling : MonoBehaviour
         {
             buttonReleased = false;
             buttonPressed = true;
+            
+            
         }
         else if (!it.Grapple)
             buttonReleased = true;
@@ -97,6 +102,7 @@ public class Grappling : MonoBehaviour
         pm.JumpToPosition(grapplePoint, highestPointOnArc);
 
         Invoke(nameof(StopGrapple), 1f);
+        audioSource.Play();
     }
     public void StopGrapple()
     {
