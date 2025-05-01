@@ -1,2 +1,15 @@
 fileFormatVersion: 2
 guid: 58de777c003c856468ef46b83ee1708d
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - cam: {instanceID: 0}
+  - gunTip: {instanceID: 0}
+  - lr: {instanceID: 0}
+  - collisionSound: {fileID: 8300000, guid: e4781f176dfcd024c8a2b152086b3d1d, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
