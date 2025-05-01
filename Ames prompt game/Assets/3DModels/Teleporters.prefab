@@ -4967,7 +4967,7 @@ GameObject:
   - component: {fileID: 5122094389620522534}
   - component: {fileID: 182671676083029931}
   - component: {fileID: 441668929997027937}
-  - component: {fileID: 384581893486938415}
+  - component: {fileID: 5417117018111901134}
   m_Layer: 0
   m_Name: Sphere
   m_TagString: Untagged
@@ -5056,8 +5056,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelToLoad: Level 1
---- !u!135 &384581893486938415
-SphereCollider:
+--- !u!136 &5417117018111901134
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -5071,11 +5071,13 @@ SphereCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 2
   m_Radius: 0.5
+  m_Height: 2
+  m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &5659959024178814329
 PrefabInstance:
@@ -5099,15 +5101,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a46a24dd2c5fa474ba1fe01b0636dbd0, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 689.8061
+      value: 81.05928
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a46a24dd2c5fa474ba1fe01b0636dbd0, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.06
+      value: 8.000178
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a46a24dd2c5fa474ba1fe01b0636dbd0, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 380.4678
+      value: 123.902
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a46a24dd2c5fa474ba1fe01b0636dbd0, type: 3}
       propertyPath: m_LocalRotation.w

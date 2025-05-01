@@ -22,15 +22,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d2fb12e64a2f1ea439fae0e72ab297bc, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 67.51338
+      value: 343.6
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d2fb12e64a2f1ea439fae0e72ab297bc, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 147.5
+      value: 253
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d2fb12e64a2f1ea439fae0e72ab297bc, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 100.41998
+      value: 269.4
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d2fb12e64a2f1ea439fae0e72ab297bc, type: 3}
       propertyPath: m_LocalRotation.w
@@ -60,13 +60,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8391222552659086748, guid: d2fb12e64a2f1ea439fae0e72ab297bc, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: -4683669308469848369, guid: d2fb12e64a2f1ea439fae0e72ab297bc, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 89a41cb78d29e2f418597b47ab438b6e, type: 2}
+    - target: {fileID: -516098083770646512, guid: d2fb12e64a2f1ea439fae0e72ab297bc, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: d2fb12e64a2f1ea439fae0e72ab297bc, type: 3}
       propertyPath: m_Name
       value: PressurePlate1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d2fb12e64a2f1ea439fae0e72ab297bc, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4083501151425157549, guid: d2fb12e64a2f1ea439fae0e72ab297bc, type: 3}
       propertyPath: m_LocalScale.z
