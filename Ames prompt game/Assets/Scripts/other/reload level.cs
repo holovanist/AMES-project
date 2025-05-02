@@ -3,8 +3,13 @@ using UnityEngine.SceneManagement;
 
 public class reloadlevel : MonoBehaviour
 {
+    public Transform Transform;
+    private void Start()
+    {
+        Transform = GameObject.FindGameObjectWithTag("Scene Start Point").transform;
+    }
     private void OnCollisionEnter(Collision collision)
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        collision.transform.position = Transform.position;
     }
 }

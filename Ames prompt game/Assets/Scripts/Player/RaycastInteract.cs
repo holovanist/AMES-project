@@ -50,6 +50,7 @@ namespace player
                 }
                 else if (hit.collider.gameObject.CompareTag("PickupItemMask"))
                 {
+                    if(InteractText != null)
                     InteractText.enabled = true;
                     if (_input.interact)
                     {
