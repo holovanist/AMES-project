@@ -2316,7 +2316,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c7e3b905dfa4fc4b9686a8d5ee71de4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buttons: []
+  buttons:
+  - {fileID: 1985522092}
   i: 0
   needsUpdate: 0
   needUpdate: 0
@@ -3512,7 +3513,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c7e3b905dfa4fc4b9686a8d5ee71de4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buttons: []
+  buttons:
+  - {fileID: 978761375}
   i: 0
   needsUpdate: 0
   needUpdate: 0
@@ -4609,6 +4611,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9ac67105bb054c4eb7f3a83c8db8db7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Transform: {fileID: 0}
 --- !u!65 &1612195173
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6729,7 +6732,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c7e3b905dfa4fc4b9686a8d5ee71de4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buttons: []
+  buttons:
+  - {fileID: 924081207}
+  - {fileID: 763078841}
   i: 0
   needsUpdate: 0
   needUpdate: 0
