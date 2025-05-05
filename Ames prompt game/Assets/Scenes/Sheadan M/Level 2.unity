@@ -683,10 +683,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2435418157159933526, guid: 8c4727191efd7b74c89ed7cfab65e8d4, type: 3}
-      propertyPath: m_AdditionalShaderChannelsFlag
-      value: 25
-      objectReference: {fileID: 0}
     - target: {fileID: 6389486574465129674, guid: 8c4727191efd7b74c89ed7cfab65e8d4, type: 3}
       propertyPath: m_Name
       value: Pause Menu
