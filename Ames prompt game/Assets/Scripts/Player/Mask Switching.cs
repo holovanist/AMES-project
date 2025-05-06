@@ -143,8 +143,8 @@ public class MaskSwitching : MonoBehaviour
             WR.enabled = false;
             Climb.enabled = false;
             Dash.enabled = false;
-            wallMask = false ;
-            floorMask = true;
+            wallMask = true ;
+            floorMask = false;
             mask1.enabled = false;
             mask2.enabled = false;
             mask3.enabled = true;
@@ -159,8 +159,8 @@ public class MaskSwitching : MonoBehaviour
             WR.enabled = false;
             Climb.enabled = false;
             Dash.enabled = false;
-            wallMask = true;
-            floorMask = false;
+            wallMask = false;
+            floorMask = true;
             mask1.enabled = false;
             mask2.enabled = false;
             mask3.enabled = false;
