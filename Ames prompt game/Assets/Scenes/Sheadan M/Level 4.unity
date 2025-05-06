@@ -2386,7 +2386,7 @@ Animator:
   m_GameObject: {fileID: 822160852}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: af3761bdd461b1d45a80d44d78e06fd0, type: 2}
+  m_Controller: {fileID: 9100000, guid: e660d28a0aa30154b95e28cfde4de4c9, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -7684,6 +7684,7 @@ MonoBehaviour:
   player2: {fileID: 0}
   OriginalPlayer: 0
   unparrent: 0
+  HUD: {fileID: 0}
 --- !u!114 &6576973137957949139
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7848,6 +7849,7 @@ MonoBehaviour:
   mask3: {fileID: 0}
   mask4: {fileID: 0}
   mask5: {fileID: 0}
+  masksCollected: 0
 --- !u!54 &7539522661138942246
 Rigidbody:
   m_ObjectHideFlags: 0
