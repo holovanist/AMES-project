@@ -22,6 +22,7 @@ namespace player
         public TextMeshProUGUI InteractText1;
         public float InteractDelay = 0.1f;
         RaycastHit hit;
+        int collectablesCollected;
         // Start is called before the first frame update
         void Start()
         {
@@ -99,7 +100,8 @@ namespace player
             if (Physics.Raycast(ray, out hit, interactRange))
                 if (hit.collider.gameObject.CompareTag("Interactable") && _input.interact)
                 {
-                    hit.collider.gameObject.GetComponent<Animator>().SetTrigger("Interact");
+                    collectablesCollected++;
+                    hit.collider.gameObject.SetActive(false);
                 }
         }
     }
