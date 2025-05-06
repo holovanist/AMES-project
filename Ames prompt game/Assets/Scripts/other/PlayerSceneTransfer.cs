@@ -17,6 +17,7 @@ public class PlayerSceneTransfer : MonoBehaviour
     float time;
     bool level1;
     public bool unparrent;
+    public GameObject HUD;
 
     // Start is called before the first frame update
     void Start()

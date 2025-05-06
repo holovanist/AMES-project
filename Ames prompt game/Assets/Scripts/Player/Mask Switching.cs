@@ -49,7 +49,10 @@ public class MaskSwitching : MonoBehaviour
             }
             if (Input.GetKeyUp(KeyCode.Alpha2))
             {
-                mask--;
+                if (mask == -1)
+                    mask = 6;
+                else
+                    mask--;
             }
         }
         else

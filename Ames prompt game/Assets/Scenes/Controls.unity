@@ -187,7 +187,12 @@ MonoBehaviour:
     Escape
     = Pause Menu
 
-    Left Click = Use Mask Ability'
+    Left Click = Grapple
+
+    Right Click = PickUp Object
+
+    G
+    = throw'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: aeb0a4a7a5329844eafdffe03624303b, type: 2}
   m_sharedMaterial: {fileID: -1294316309986080097, guid: aeb0a4a7a5329844eafdffe03624303b, type: 2}
@@ -252,7 +257,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 3.135849, w: 0}
+  m_margin: {x: 0, y: 0, z: -162.34938, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -566,9 +571,14 @@ MonoBehaviour:
 
     D = Right
 
-    1 = Switch/Activate
+    1 = Switch
     Mask ability
 
+    2 = Switch Mask ability
+
+    control = slide
+
+    c = crouch
 
 '
   m_isRightToLeft: 0
@@ -635,7 +645,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 6.7090454, w: 0}
+  m_margin: {x: -64.31433, y: 0, z: 6.7090454, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
