@@ -641,8 +641,8 @@ Transform:
   m_GameObject: {fileID: 224864633}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 272.5, y: 138, z: 255.5}
-  m_LocalScale: {x: 50, y: 225, z: 44}
+  m_LocalPosition: {x: 272.5, y: 133.273, z: 255.5}
+  m_LocalScale: {x: 50, y: 234.45001, z: 44}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 90091076}
@@ -1900,8 +1900,8 @@ Transform:
   m_GameObject: {fileID: 665904847}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 31, y: 78.5, z: 259}
-  m_LocalScale: {x: 61, y: 44, z: 22}
+  m_LocalPosition: {x: 31, y: 65.385, z: 259}
+  m_LocalScale: {x: 61, y: 70.224, z: 22}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1575266899}
@@ -4194,8 +4194,8 @@ Transform:
   m_GameObject: {fileID: 1491154598}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 31, y: 77.1384, z: 179.265}
-  m_LocalScale: {x: 61, y: 46.7232, z: 39.424}
+  m_LocalPosition: {x: 31, y: 65.608, z: 179.265}
+  m_LocalScale: {x: 61, y: 69.80446, z: 39.424}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1575266899}
@@ -6115,8 +6115,8 @@ Transform:
   m_GameObject: {fileID: 1972386079}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 184, y: 72.5, z: 120}
-  m_LocalScale: {x: 56, y: 55, z: 120}
+  m_LocalPosition: {x: 184, y: 67.245, z: 120}
+  m_LocalScale: {x: 56, y: 65.505, z: 120}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1575266899}
@@ -7445,6 +7445,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactRange: 4
   InteractText: {fileID: 0}
+  InteractText1: {fileID: 0}
   InteractDelay: 0.1
 --- !u!1 &4250385325223196151
 GameObject:
@@ -7842,6 +7843,11 @@ MonoBehaviour:
   PickUp: 0
   wallMask: 0
   floorMask: 0
+  mask1: {fileID: 0}
+  mask2: {fileID: 0}
+  mask3: {fileID: 0}
+  mask4: {fileID: 0}
+  mask5: {fileID: 0}
 --- !u!54 &7539522661138942246
 Rigidbody:
   m_ObjectHideFlags: 0
