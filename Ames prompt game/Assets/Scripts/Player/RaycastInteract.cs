@@ -20,9 +20,11 @@ namespace player
         [SerializeField]
         TextMeshProUGUI InteractText;
         public TextMeshProUGUI InteractText1;
+        public TextMeshProUGUI InteractText2;
         public float InteractDelay = 0.1f;
         RaycastHit hit;
         int collectablesCollected;
+        string number;
         // Start is called before the first frame update
         void Start()
         {
@@ -36,6 +38,8 @@ namespace player
         // Update is called once per frame
         void Update()
         {
+            number = collectablesCollected.ToString();
+            InteractText2.SetText(number + "/ 5 collectables collected");
             //RaycastHit hit;
             Ray ray = new(Camera.main.transform.position, Camera.main.transform.forward);
             if (Physics.Raycast(ray, out hit, interactRange))
