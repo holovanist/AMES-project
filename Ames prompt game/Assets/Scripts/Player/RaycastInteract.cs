@@ -81,15 +81,16 @@ namespace player
             if (Physics.Raycast(ray, out hit, interactRange))
                 if (hit.collider.gameObject.CompareTag("PickupItemMask") && _input.interact)
                 {
+                    _maskSwitching.masksCollected++;
                     if (!_maskSwitching.Mask1Collected)
                         _maskSwitching.Mask1Collected = true;
-                    if (_maskSwitching.Mask1Collected)
+                    else if (_maskSwitching.Mask1Collected)
                         _maskSwitching.Mask2Collected = true;
-                    if (_maskSwitching.Mask2Collected)
+                    else if (_maskSwitching.Mask2Collected)
                         _maskSwitching.Mask3Collected = true;
-                    if (_maskSwitching.Mask3Collected)
+                    else if (_maskSwitching.Mask3Collected)
                         _maskSwitching.Mask4Collected = true;
-                    if (_maskSwitching.Mask4Collected)
+                    else if (_maskSwitching.Mask4Collected)
                         _maskSwitching.Mask5Collected = true;
                     hit.collider.gameObject.SetActive(false);
                 }

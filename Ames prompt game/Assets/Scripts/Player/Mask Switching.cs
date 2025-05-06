@@ -26,10 +26,12 @@ public class MaskSwitching : MonoBehaviour
     public TextMeshProUGUI mask3;
     public TextMeshProUGUI mask4;
     public TextMeshProUGUI mask5;
+    public int masksCollected;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        masksCollected = 0;
         Grapple = GetComponent<Grappling>();
         Slide = GetComponent<Sliding>();
         WR = GetComponent<WallRunning>();
