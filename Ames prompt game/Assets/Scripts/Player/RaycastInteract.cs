@@ -19,6 +19,7 @@ namespace player
         float interactRange = 4;
         [SerializeField]
         TextMeshProUGUI InteractText;
+        public TextMeshProUGUI InteractText1;
         public float InteractDelay = 0.1f;
         RaycastHit hit;
         // Start is called before the first frame update
@@ -26,6 +27,7 @@ namespace player
         {
             if( InteractText != null )
             InteractText.enabled = false;
+            InteractText1.enabled = false;
             _input = GetComponent<StarterAssetsInputs>();
             _maskSwitching = GetComponent<MaskSwitching>();
         }
@@ -44,8 +46,8 @@ namespace player
                     {
                         //needs a small cooldown
                         Invoke(nameof(PickupItem), InteractDelay);
-                        if (InteractText != null)
-                            InteractText.enabled = false;
+                        if (InteractText1 != null)
+                            InteractText1.enabled = false;
                     }
                 }
                 else if (hit.collider.gameObject.CompareTag("PickupItemMask"))
@@ -80,13 +82,13 @@ namespace player
                 {
                     if (!_maskSwitching.Mask1Collected)
                         _maskSwitching.Mask1Collected = true;
-                    else if (_maskSwitching.Mask1Collected)
+                    if (_maskSwitching.Mask1Collected)
                         _maskSwitching.Mask2Collected = true;
-                    else if (_maskSwitching.Mask2Collected)
+                    if (_maskSwitching.Mask2Collected)
                         _maskSwitching.Mask3Collected = true;
-                    else if (_maskSwitching.Mask3Collected)
+                    if (_maskSwitching.Mask3Collected)
                         _maskSwitching.Mask4Collected = true;
-                    else if (_maskSwitching.Mask4Collected)
+                    if (_maskSwitching.Mask4Collected)
                         _maskSwitching.Mask5Collected = true;
                     hit.collider.gameObject.SetActive(false);
                 }
