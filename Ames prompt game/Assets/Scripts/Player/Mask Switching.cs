@@ -21,6 +21,11 @@ public class MaskSwitching : MonoBehaviour
     public bool PickUp;
     public bool wallMask;
     public bool floorMask;
+    public TextMeshProUGUI mask1;
+    public TextMeshProUGUI mask2;
+    public TextMeshProUGUI mask3;
+    public TextMeshProUGUI mask4;
+    public TextMeshProUGUI mask5;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -41,6 +46,10 @@ public class MaskSwitching : MonoBehaviour
             if (Input.GetKeyUp(KeyCode.Alpha1))
             {
                 mask++;
+            }
+            if (Input.GetKeyUp(KeyCode.Alpha2))
+            {
+                mask--;
             }
         }
         else
@@ -83,6 +92,11 @@ public class MaskSwitching : MonoBehaviour
             Dash.enabled = false; 
             wallMask = false;
             floorMask = false;
+            mask1.enabled = false;
+            mask2.enabled = false;
+            mask3.enabled = false;
+            mask4.enabled = false;
+            mask5.enabled = false;
         }
         else if (mask == 0 && Mask1Collected)
         {
@@ -94,6 +108,11 @@ public class MaskSwitching : MonoBehaviour
             Dash.enabled = false;
             wallMask = false;
             floorMask = false;
+            mask1.enabled = true;
+            mask2.enabled = false;
+            mask3.enabled = false;
+            mask4.enabled = false;
+            mask5.enabled = false;
         }
         else if (mask == 1 && Mask2Collected)
         {
@@ -105,6 +124,11 @@ public class MaskSwitching : MonoBehaviour
             Dash.enabled = true;
             wallMask = false;
             floorMask = false;
+            mask1.enabled = false;
+            mask2.enabled = true;
+            mask3.enabled = false;
+            mask4.enabled = false;
+            mask5.enabled = false;
         }
         else if (mask == 2 && Mask3Collected)
         {
@@ -116,6 +140,11 @@ public class MaskSwitching : MonoBehaviour
             Dash.enabled = false;
             wallMask = false ;
             floorMask = true;
+            mask1.enabled = false;
+            mask2.enabled = false;
+            mask3.enabled = true;
+            mask4.enabled = false;
+            mask5.enabled = false;
         }
         else if (mask == 3 && Mask4Collected)
         {
@@ -127,6 +156,11 @@ public class MaskSwitching : MonoBehaviour
             Dash.enabled = false;
             wallMask = true;
             floorMask = false;
+            mask1.enabled = false;
+            mask2.enabled = false;
+            mask3.enabled = false;
+            mask4.enabled = true;
+            mask5.enabled = false;
         }
         else if (mask == 4 && Mask5Collected)
         {
@@ -138,6 +172,11 @@ public class MaskSwitching : MonoBehaviour
             Dash.enabled = false;
             wallMask = false;
             floorMask = false;
+            mask1.enabled = false;
+            mask2.enabled = false;
+            mask3.enabled = false;
+            mask4.enabled = false;
+            mask5.enabled = true;
         }
         
     }

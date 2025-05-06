@@ -7,10 +7,14 @@ using UnityEngine.SceneManagement;
 public class PauseMenu : MonoBehaviour
 {
     public string MainMenu;
+    public Transform Transform;
+    public GameObject player;
     // Start is called before the first frame update
     void Start()
     {
+        player = GameObject.FindGameObjectWithTag("Player");
         GetComponent<Canvas>().enabled = false;
+        Transform = GameObject.FindGameObjectWithTag("Scene Start Point").transform;
     }
 
     // Update is called once per frame
@@ -46,7 +50,7 @@ public class PauseMenu : MonoBehaviour
 
     public void ReloadLevel()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        player.transform.position = Transform.position;
         Time.timeScale = 1;
     }
 
@@ -55,4 +59,8 @@ public class PauseMenu : MonoBehaviour
        SceneManager.LoadScene(MainMenu);
     }
 
+    private void OnLevelWasLoaded(int level)
+    {
+        Transform = GameObject.FindGameObjectWithTag("Scene Start Point").transform;
+    }
 }
