@@ -32,4 +32,8 @@ public class MainMenu : MonoBehaviour
     {
         SceneManager.LoadScene(Controls1);
     }
+    public void LoadGame()
+    {
+        GameObject.FindGameObjectWithTag("Player").GetComponent<SaveScript>().Load();
+    }
 }

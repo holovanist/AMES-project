@@ -28,7 +28,7 @@ namespace NewMovment
                 Cursor.lockState = CursorLockMode.Locked;
                 Cursor.visible = false;
             }
-            else if (menu != null)
+            if (menu != null)
             {
                 Cursor.visible = true;
                 Cursor.lockState = CursorLockMode.None;
@@ -46,12 +46,7 @@ namespace NewMovment
 
             transform.rotation = Quaternion.Euler(xRotation, yRotation, 0);
             orientatiion.rotation = Quaternion.Euler(0, yRotation, 0);
-            if (menu == null)
-            {
-                Cursor.lockState = CursorLockMode.Locked;
-                Cursor.visible = false;
-            }
-            else if (menu != null)
+            if (menu != null)
             {
                 Cursor.visible = true;
                 Cursor.lockState = CursorLockMode.None;

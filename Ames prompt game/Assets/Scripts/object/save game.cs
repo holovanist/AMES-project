@@ -26,7 +26,14 @@ public class SaveScript : MonoBehaviour
     }
     private void OnLevelWasLoaded(int level)
     {
+        string scene;
+        scene = SceneManager.GetActiveScene().name;
+        Debug.Log(scene);
+        if (scene != ("Controls") || scene != ("HowToPlay") || scene != ("Start Menu") || scene != ("WinScreen"))
+        {
         Save();
+            Debug.Log("1");
+        }
     }
     public void Load()
     {
