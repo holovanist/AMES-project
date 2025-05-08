@@ -1512,6 +1512,23 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 900484753}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &943120553 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1448485138721762132, guid: 07d967961762b3b42a739ef45a39e0ec, type: 3}
+  m_PrefabInstance: {fileID: 1399665980}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &943120555
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 943120553}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 004eb8344c4136f43852b9a16804dd61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &949176573
 GameObject:
   m_ObjectHideFlags: 0
@@ -3075,7 +3092,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1448485138721762132, guid: 07d967961762b3b42a739ef45a39e0ec, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 943120555}
   m_SourcePrefab: {fileID: 100100000, guid: 07d967961762b3b42a739ef45a39e0ec, type: 3}
 --- !u!1 &1499290113
 GameObject:
@@ -3488,7 +3508,6 @@ GameObject:
   - component: {fileID: 1595447101}
   - component: {fileID: 1595447100}
   - component: {fileID: 1595447099}
-  - component: {fileID: 1595447098}
   m_Layer: 6
   m_Name: floor (11)
   m_TagString: Untagged
@@ -3511,22 +3530,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2128338440}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1595447098
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1595447096}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5af8eea42debee8429a41a9b5727a486, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cube:
-    serializedVersion: 2
-    m_Bits: 0
-  oppisite: 0
 --- !u!65 &1595447099
 BoxCollider:
   m_ObjectHideFlags: 0

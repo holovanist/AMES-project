@@ -24,17 +24,6 @@ public class SaveScript : MonoBehaviour
         System.IO.File.WriteAllText(file, myDataString);
         //Debug.Log(file);
     }
-    private void OnLevelWasLoaded(int level)
-    {
-        string scene;
-        scene = SceneManager.GetActiveScene().name;
-        Debug.Log(scene);
-        if (scene != ("Controls") || scene != ("HowToPlay") || scene != ("Start Menu") || scene != ("WinScreen"))
-        {
-        Save();
-            Debug.Log("1");
-        }
-    }
     public void Load()
     {
         string file = Application.persistentDataPath + "/" + gameObject.name + ".json";
@@ -53,7 +42,7 @@ public class SaveScript : MonoBehaviour
             Time.timeScale = 1;
             //string myData = File.ReadAllText(file);
             //myData = EncryptDecryptData(myData);
-            ////Debug.Log(myData);
+            //Debug.Log(myData);
         }
     }
     public string EncryptDecryptData(string data)

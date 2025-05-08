@@ -591,6 +591,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1361887311934617612, guid: d770c4991625fb441843782d897ac032, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4918656157535267170, guid: d770c4991625fb441843782d897ac032, type: 3}
       propertyPath: m_LocalPosition.x
       value: 19.65
@@ -601,7 +605,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7076259203466556476, guid: d770c4991625fb441843782d897ac032, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1376,7 +1380,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cube:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 2048
 --- !u!1001 &362397421
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1429,13 +1433,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: PressurePlate1
       objectReference: {fileID: 0}
+    - target: {fileID: 4410189118944531349, guid: d08faa5ae4970574498dcaff79402fa8, type: 3}
+      propertyPath: BC
+      value: 
+      objectReference: {fileID: 1226046062}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 1959064131633560821, guid: d08faa5ae4970574498dcaff79402fa8, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 978761376}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d08faa5ae4970574498dcaff79402fa8, type: 3}
 --- !u!4 &362397422 stripped
 Transform:
@@ -1502,6 +1507,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1361887311934617612, guid: d770c4991625fb441843782d897ac032, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4918656157535267170, guid: d770c4991625fb441843782d897ac032, type: 3}
       propertyPath: m_LocalPosition.x
       value: 20.15
@@ -1512,7 +1521,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7076259203466556476, guid: d770c4991625fb441843782d897ac032, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1591,10 +1600,6 @@ PrefabInstance:
     - target: {fileID: 6099427905392831200, guid: d770c4991625fb441843782d897ac032, type: 3}
       propertyPath: m_Name
       value: Moving Platform 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7076259203466556476, guid: d770c4991625fb441843782d897ac032, type: 3}
-      propertyPath: m_Enabled
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3210,25 +3215,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1959064131633560821, guid: d08faa5ae4970574498dcaff79402fa8, type: 3}
   m_PrefabInstance: {fileID: 362397421}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &978761376
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 978761375}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cfa6b7635e96cd44bbdcbe380399d67e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pressed: 0
-  wasPressed: 0
-  isPressed: 0
-  isCurrentlyPressed: 0
-  animationTriggerUp: 
-  animationTriggerDown: 
-  BC: {fileID: 1226046062}
 --- !u!1 &992159135
 GameObject:
   m_ObjectHideFlags: 0
@@ -3401,38 +3387,20 @@ PrefabInstance:
       propertyPath: m_Name
       value: PressurePlate1
       objectReference: {fileID: 0}
+    - target: {fileID: 4410189118944531349, guid: d08faa5ae4970574498dcaff79402fa8, type: 3}
+      propertyPath: BC
+      value: 
+      objectReference: {fileID: 2086615717}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 1959064131633560821, guid: d08faa5ae4970574498dcaff79402fa8, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1064985386}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d08faa5ae4970574498dcaff79402fa8, type: 3}
 --- !u!4 &1064985385 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1181120533841471055, guid: d08faa5ae4970574498dcaff79402fa8, type: 3}
   m_PrefabInstance: {fileID: 1064985384}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1064985386
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 924081207}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cfa6b7635e96cd44bbdcbe380399d67e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pressed: 0
-  wasPressed: 0
-  isPressed: 0
-  isCurrentlyPressed: 0
-  animationTriggerUp: 
-  animationTriggerDown: 
-  BC: {fileID: 2086615717}
 --- !u!1 &1073773894
 GameObject:
   m_ObjectHideFlags: 0
@@ -4096,7 +4064,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cube:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 2048
 --- !u!1001 &1321283861
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4157,6 +4125,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1361887311934617612, guid: d770c4991625fb441843782d897ac032, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4918656157535267170, guid: d770c4991625fb441843782d897ac032, type: 3}
       propertyPath: m_LocalPosition.x
       value: 20.26
@@ -4167,7 +4139,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7076259203466556476, guid: d770c4991625fb441843782d897ac032, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5652,6 +5624,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1361887311934617612, guid: d770c4991625fb441843782d897ac032, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2158212415112351721, guid: d770c4991625fb441843782d897ac032, type: 3}
       propertyPath: m_LocalScale.x
       value: 15
@@ -5686,7 +5662,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7076259203466556476, guid: d770c4991625fb441843782d897ac032, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8144619499035077209, guid: d770c4991625fb441843782d897ac032, type: 3}
       propertyPath: m_LocalPosition.z
@@ -6078,7 +6054,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cube:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 2048
 --- !u!1001 &1948528108
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6131,13 +6107,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: PressurePlate1 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 4410189118944531349, guid: d08faa5ae4970574498dcaff79402fa8, type: 3}
+      propertyPath: BC
+      value: 
+      objectReference: {fileID: 822160855}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 1959064131633560821, guid: d08faa5ae4970574498dcaff79402fa8, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1985522093}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d08faa5ae4970574498dcaff79402fa8, type: 3}
 --- !u!4 &1948528109 stripped
 Transform:
@@ -6433,25 +6410,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1959064131633560821, guid: d08faa5ae4970574498dcaff79402fa8, type: 3}
   m_PrefabInstance: {fileID: 1948528108}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1985522093
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1985522092}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cfa6b7635e96cd44bbdcbe380399d67e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pressed: 0
-  wasPressed: 0
-  isPressed: 0
-  isCurrentlyPressed: 0
-  animationTriggerUp: 
-  animationTriggerDown: 
-  BC: {fileID: 822160855}
 --- !u!1 &1986098331
 GameObject:
   m_ObjectHideFlags: 0
@@ -6549,6 +6507,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1361887311934617612, guid: d770c4991625fb441843782d897ac032, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2158212415112351721, guid: d770c4991625fb441843782d897ac032, type: 3}
       propertyPath: m_LocalScale.x
       value: 20
@@ -6591,7 +6553,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7076259203466556476, guid: d770c4991625fb441843782d897ac032, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8144619499035077209, guid: d770c4991625fb441843782d897ac032, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6679,38 +6641,20 @@ PrefabInstance:
       propertyPath: m_Name
       value: PressurePlate1 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 4410189118944531349, guid: d08faa5ae4970574498dcaff79402fa8, type: 3}
+      propertyPath: BC
+      value: 
+      objectReference: {fileID: 2086615717}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 1959064131633560821, guid: d08faa5ae4970574498dcaff79402fa8, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 2027647766}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d08faa5ae4970574498dcaff79402fa8, type: 3}
 --- !u!4 &2027647765 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1181120533841471055, guid: d08faa5ae4970574498dcaff79402fa8, type: 3}
   m_PrefabInstance: {fileID: 2027647764}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &2027647766
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 763078841}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cfa6b7635e96cd44bbdcbe380399d67e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pressed: 0
-  wasPressed: 0
-  isPressed: 0
-  isCurrentlyPressed: 0
-  animationTriggerUp: 
-  animationTriggerDown: 
-  BC: {fileID: 2086615717}
 --- !u!1 &2033304967
 GameObject:
   m_ObjectHideFlags: 0

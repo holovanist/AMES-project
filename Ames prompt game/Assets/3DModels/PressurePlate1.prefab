@@ -98,6 +98,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: -516098083770646512, guid: d2fb12e64a2f1ea439fae0e72ab297bc, type: 3}
       insertIndex: -1
       addedObject: {fileID: 4646004265385924471}
+    - targetCorrespondingSourceObject: {fileID: -516098083770646512, guid: d2fb12e64a2f1ea439fae0e72ab297bc, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4410189118944531349}
   m_SourcePrefab: {fileID: 100100000, guid: d2fb12e64a2f1ea439fae0e72ab297bc, type: 3}
 --- !u!1 &2045465665018868672 stripped
 GameObject:
@@ -153,3 +156,22 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4493585093827132993, guid: d2fb12e64a2f1ea439fae0e72ab297bc, type: 3}
+--- !u!114 &4410189118944531349
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8014406387316572596}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfa6b7635e96cd44bbdcbe380399d67e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pressed: 0
+  wasPressed: 0
+  isPressed: 0
+  isCurrentlyPressed: 0
+  animationTriggerUp: 
+  animationTriggerDown: 
+  BC: {fileID: 0}
