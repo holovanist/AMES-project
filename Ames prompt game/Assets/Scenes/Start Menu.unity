@@ -3077,7 +3077,7 @@ MonoBehaviour:
   freeze: 0
   restricted: 0
   jumping: 0
-  multiplier: 1.3
+  multiplier: 1.4
 --- !u!4 &821780726660239093
 Transform:
   m_ObjectHideFlags: 0
@@ -3780,7 +3780,7 @@ MonoBehaviour:
   exitingWall: 0
   exitWallTime: 0.25
   useGravity: 1
-  gravityCounterForce: 14
+  gravityCounterForce: 20
   orientation: {fileID: 4700967345568704021}
 --- !u!1 &2909180209077975328
 GameObject:
@@ -5121,7 +5121,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   climbSpeed: 10
-  maxClimbTime: 0.75
+  maxClimbTime: 10
   climbJumpUpForce: 14
   climbJumpBackForce: 12
   climbJumps: 1
@@ -5604,7 +5604,7 @@ MonoBehaviour:
   allowAllDirections: 1
   disableGravity: 1
   resetVel: 1
-  dashForce: 20
+  dashForce: 100
   dashUpwardForce: 0
   maxDashYSpeed: 15
   dashDuration: 0.25
@@ -6047,9 +6047,9 @@ MonoBehaviour:
     m_Bits: 1536
   lr: {fileID: 4222649273843422495}
   collisionSound: {fileID: 8300000, guid: e4781f176dfcd024c8a2b152086b3d1d, type: 3}
-  maxGrappleDistance: 25
+  maxGrappleDistance: 35
   grappleDelayTime: 0.25
-  overshootYAxis: 0
+  overshootYAxis: 1
   grapplingCooldown: 1
 --- !u!1 &8053354031063452858
 GameObject:

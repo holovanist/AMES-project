@@ -3432,7 +3432,7 @@ MonoBehaviour:
   isCurrentlyPressed: 0
   animationTriggerUp: 
   animationTriggerDown: 
-  BC: {fileID: 0}
+  BC: {fileID: 2086615717}
 --- !u!1 &1073773894
 GameObject:
   m_ObjectHideFlags: 0
@@ -4921,7 +4921,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2110120236488805047, guid: 5c5ea242914e3e840921684da35bbcd9, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 89.75
+      value: 90.19
       objectReference: {fileID: 0}
     - target: {fileID: 2110120236488805047, guid: 5c5ea242914e3e840921684da35bbcd9, type: 3}
       propertyPath: m_LocalPosition.z
@@ -6451,7 +6451,7 @@ MonoBehaviour:
   isCurrentlyPressed: 0
   animationTriggerUp: 
   animationTriggerDown: 
-  BC: {fileID: 0}
+  BC: {fileID: 822160855}
 --- !u!1 &1986098331
 GameObject:
   m_ObjectHideFlags: 0
@@ -6710,7 +6710,7 @@ MonoBehaviour:
   isCurrentlyPressed: 0
   animationTriggerUp: 
   animationTriggerDown: 
-  BC: {fileID: 0}
+  BC: {fileID: 2086615717}
 --- !u!1 &2033304967
 GameObject:
   m_ObjectHideFlags: 0
