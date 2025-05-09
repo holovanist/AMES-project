@@ -155,6 +155,11 @@ Transform:
   - {fileID: 930908146}
   m_Father: {fileID: 1667297774}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &36350016 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8014406387316572596, guid: d08faa5ae4970574498dcaff79402fa8, type: 3}
+  m_PrefabInstance: {fileID: 362397421}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &73671439
 GameObject:
   m_ObjectHideFlags: 0
@@ -337,6 +342,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 93867586}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &121901564 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8014406387316572596, guid: d08faa5ae4970574498dcaff79402fa8, type: 3}
+  m_PrefabInstance: {fileID: 2027647764}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &184288975
 GameObject:
   m_ObjectHideFlags: 0
@@ -2053,6 +2063,11 @@ Transform:
   - {fileID: 1729882269}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &647746279 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8014406387316572596, guid: d08faa5ae4970574498dcaff79402fa8, type: 3}
+  m_PrefabInstance: {fileID: 1948528108}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &665904847
 GameObject:
   m_ObjectHideFlags: 0
@@ -2516,11 +2531,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 746209446}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &763078841 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1959064131633560821, guid: d08faa5ae4970574498dcaff79402fa8, type: 3}
-  m_PrefabInstance: {fileID: 2027647764}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &822160852
 GameObject:
   m_ObjectHideFlags: 0
@@ -2592,7 +2602,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttons:
-  - {fileID: 1985522092}
+  - {fileID: 647746279}
   i: 0
   needsUpdate: 0
   needUpdate: 0
@@ -2934,11 +2944,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 891786526}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &924081207 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1959064131633560821, guid: d08faa5ae4970574498dcaff79402fa8, type: 3}
-  m_PrefabInstance: {fileID: 1064985384}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &930908145
 GameObject:
   m_ObjectHideFlags: 0
@@ -3209,11 +3214,6 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 1100815040793377686, guid: d770c4991625fb441843782d897ac032, type: 3}
   m_PrefabInstance: {fileID: 976453785}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &978761375 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1959064131633560821, guid: d08faa5ae4970574498dcaff79402fa8, type: 3}
-  m_PrefabInstance: {fileID: 362397421}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &992159135
 GameObject:
@@ -3752,7 +3752,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttons:
-  - {fileID: 978761375}
+  - {fileID: 36350016}
   i: 0
   needsUpdate: 0
   needUpdate: 0
@@ -6405,11 +6405,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1972386079}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &1985522092 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1959064131633560821, guid: d08faa5ae4970574498dcaff79402fa8, type: 3}
-  m_PrefabInstance: {fileID: 1948528108}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1986098331
 GameObject:
   m_ObjectHideFlags: 0
@@ -6447,6 +6442,11 @@ Transform:
   - {fileID: 1765773043}
   m_Father: {fileID: 2115160368}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2007808003 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8014406387316572596, guid: d08faa5ae4970574498dcaff79402fa8, type: 3}
+  m_PrefabInstance: {fileID: 1064985384}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2025700325
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7004,8 +7004,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttons:
-  - {fileID: 924081207}
-  - {fileID: 763078841}
+  - {fileID: 2007808003}
+  - {fileID: 121901564}
   i: 0
   needsUpdate: 0
   needUpdate: 0

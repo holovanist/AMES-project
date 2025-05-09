@@ -14,6 +14,7 @@ public class WalkOnFloor : MonoBehaviour
         MS = GameObject.FindGameObjectWithTag("Player").GetComponent<MaskSwitching>();
         playerLayer = LayerMask.GetMask("Player");
         C = GetComponent<Collider>();
+        cube += playerLayer;
     }
 
     // Update is called once per frame
@@ -23,7 +24,7 @@ public class WalkOnFloor : MonoBehaviour
         {
             if (!MS.floorMask)
             {
-                C.excludeLayers = playerLayer + cube;
+                C.excludeLayers = cube;
             }
             else
             {
@@ -34,7 +35,7 @@ public class WalkOnFloor : MonoBehaviour
         {
             if (MS.floorMask)
             {
-                C.excludeLayers = playerLayer;
+                C.excludeLayers = cube;
             }
             else
             {

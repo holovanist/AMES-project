@@ -13,6 +13,7 @@ public class WalkThroughWall : MonoBehaviour
         MS = GameObject.FindGameObjectWithTag("Player").GetComponent<MaskSwitching>();
         playerLayer = LayerMask.GetMask("Player");
         C = GetComponent<Collider>();
+        cube += playerLayer;
     }
 
     // Update is called once per frame
@@ -20,7 +21,7 @@ public class WalkThroughWall : MonoBehaviour
     {
         if (MS.wallMask)
         {
-            C.excludeLayers = playerLayer + cube;
+            C.excludeLayers = cube;
         }
         else
         {
